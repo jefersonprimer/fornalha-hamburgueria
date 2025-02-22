@@ -1,0 +1,73 @@
+{
+    "porcoes": [
+      {
+        "name": "Porção de Batatas",
+        "description": "Batatas crocantes com tempero especial.",
+        "price": "R$ 14,90",
+        "imageSrc": "/images/batata.jpg"
+      },
+      {
+        "name": "Porção de Frango Frito",
+        "description": "Frango frito crocante, com molho especial.",
+        "price": "R$ 19,90",
+        "imageSrc": "/images/frango.jpg"
+      }
+    ],
+    "lanches": [
+      {
+        "name": "Hambúrguer de Carne",
+        "description": "Hambúrguer artesanal com carne de qualidade.",
+        "price": "R$ 24,90",
+        "imageSrc": "/images/hamburguer.jpg"
+      },
+      {
+        "name": "Hambúrguer Vegano",
+        "description": "Hambúrguer vegano com falafel e molho especial.",
+        "price": "R$ 22,90",
+        "imageSrc": "/images/hamburguer_vegano.jpg"
+      }
+    ],
+    "cervejas": [
+      {
+        "name": "Cerveja Lata",
+        "description": "Cerveja gelada, perfeita para seu pedido.",
+        "price": "R$ 7,50",
+        "imageSrc": "/images/cerveja.jpg"
+      },
+      {
+        "name": "Cerveja Long Neck",
+        "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
+        "price": "R$ 9,90",
+        "imageSrc": "/images/cerveja_longneck.jpg"
+      }
+    ],
+    "sucos": [
+      {
+        "name": "Suco de Laranja",
+        "description": "Suco natural de laranja, fresco e saboroso.",
+        "price": "R$ 5,50",
+        "imageSrc": "/images/suco_laranja.jpg"
+      },
+      {
+        "name": "Suco de Manga",
+        "description": "Suco de manga natural e refrescante.",
+        "price": "R$ 5,50",
+        "imageSrc": "/images/suco_manga.jpg"
+      }
+    ],
+    "refrigerantes": [
+      {
+        "name": "Coca-Cola",
+        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/coca_cola.jpg"
+      },
+      {
+        "name": "Guaraná Antarctica",
+        "description": "O sabor refrescante de guaraná.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/guarana.jpg"
+      }
+    ]
+  }
+  

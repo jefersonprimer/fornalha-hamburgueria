@@ -1,16 +1,18 @@
-"use client"
-import Banner from "./components/banner";
-import Footer from "./components/layout/footer";
-import Header from "./components/layout/header"
+import React from 'react';
+import SectionsMenu from './components/SectionsMenu';
+import PedidosPage from './pedidos/page';
+import Banner from './components/banner';
 
-const Home = () => {
+const App: React.FC = () => {
   return (
-    <>
-      <Header/>
-      <Banner/>
-      <Footer />
-    </>
-  )
-}
+      <div>
+        <Banner/>
+        
+          <SectionsMenu />
+          <PedidosPage />
+     
+      </div>
+  );
+};
 
-export default Home;
+export default App;
