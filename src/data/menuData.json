@@ -68,6 +68,77 @@
         "price": "R$ 6,00",
         "imageSrc": "/images/guarana.jpg"
       }
+    ],
+    "energetico": [
+      {
+        "name": "Moster",
+        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/coca_cola.jpg"
+      },
+      {
+        "name": "RedBull",
+        "description": "RedBull te da assas.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/guarana.jpg"
+      }
+    ]
+    ,
+    "whisky/vodka": [
+      {
+        "name": "Danil's",
+        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/coca_cola.jpg"
+      },
+      {
+        "name": "whisky 98",
+        "description": "RedBull te da assas.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/guarana.jpg"
+      }
+    ],
+    "vinhos": [
+      {
+        "name": "Vinho 87",
+        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/coca_cola.jpg"
+      },
+      {
+        "name": "Vinho 89",
+        "description": "RedBull te da assas.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/guarana.jpg"
+      }
+    ],
+    "guloseimas": [
+      {
+        "name": "guloseima 1",
+        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/coca_cola.jpg"
+      },
+      {
+        "name": "guloseima 2",
+        "description": "RedBull te da assas.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/guarana.jpg"
+      }
+    ],
+    "refeições": [
+      {
+        "name": "Moster",
+        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/coca_cola.jpg"
+      },
+      {
+        "name": "RedBull",
+        "description": "RedBull te da assas.",
+        "price": "R$ 6,00",
+        "imageSrc": "/images/guarana.jpg"
+      }
     ]
   }
   

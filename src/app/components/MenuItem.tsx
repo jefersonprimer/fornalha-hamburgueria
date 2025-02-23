@@ -11,7 +11,7 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ name, description, price, imageSrc, onClick }) => {
   return (
-    <div onClick={onClick} className="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4 cursor-pointer">
+    <div onClick={onClick} className="flex items-center justify-between bg-white p-4  shadow-md mb-4 cursor-pointer">
       {/* Coluna com o nome, descrição e preço */}
       <div className="flex flex-col flex-grow">
         <h3 className="text-xl font-semibold text-gray-800">{name}</h3>

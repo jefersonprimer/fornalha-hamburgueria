@@ -14,10 +14,7 @@ export default function SectionsMenu() {
   const { addToCart } = useCart();
   const router = useRouter();
 
-  const openModal = (item: any) => {
-    setSelectedItem(item);
-  };
-
+  const openModal = (item: any) => setSelectedItem(item);
   const closeModal = () => {
     setSelectedItem(null);
     setQuantity(1);
@@ -29,20 +26,43 @@ export default function SectionsMenu() {
 
   const handleAddToCart = () => {
     if (selectedItem) {
-      // Garantir que o price seja um número
       const price = parseFloat(selectedItem.price);
       addToCart({ ...selectedItem, id: selectedItem.id, price, quantity });
       closeModal();
-      router.push("/pedidos"); // Redireciona para a página de pedidos
+      router.push("/pedidos");
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
     <div>
-      <div className="py-8 max-w-6xl mx-auto">
+      {/* Menu horizontal fixo no topo das seções */}
+      <nav className="bg-[#1C3B4A] shadow-md sticky top-0">
+        <ul className="flex justify-center gap-4 p-4 overflow-x-auto">
+          {Object.keys(data).map((section) => (
+            <li key={section}>
+              <button
+                onClick={() => scrollToSection(section)}
+                className="text-lg font-semibold text-white hover:text-[#F80305] transition"
+              >
+                {section.toUpperCase()}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Seções do Cardápio */}
+      <div className="max-w-6xl mx-auto">
         {Object.keys(data).map((section, index) => (
-          <section key={index} id={section} className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">{section.toUpperCase()}</h2>
+          <section key={index} id={section} className="mb-12 pt-20">
+            <h2 className="text-2xl font-bold mb-4 text-white">{section.toUpperCase()}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {data[section].map((item: any, itemIndex: number) => (
                 <MenuItem
@@ -59,6 +79,7 @@ export default function SectionsMenu() {
         ))}
       </div>
 
+      {/* Modal de item selecionado */}
       {selectedItem && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg w-96 relative">

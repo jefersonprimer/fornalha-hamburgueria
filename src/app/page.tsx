@@ -9,8 +9,7 @@ const App: React.FC = () => {
         <Banner/>
         
           <SectionsMenu />
-          <PedidosPage />
-     
+         
       </div>
   );
 };
