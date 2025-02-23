@@ -3,13 +3,13 @@
       {
         "name": "Porção de Batatas",
         "description": "Batatas crocantes com tempero especial.",
-        "price": "R$ 14,90",
+        "price": 19.90,
         "imageSrc": "/images/batata.jpg"
       },
       {
         "name": "Porção de Frango Frito",
         "description": "Frango frito crocante, com molho especial.",
-        "price": "R$ 19,90",
+        "price": 19.90,
         "imageSrc": "/images/frango.jpg"
       }
     ],
@@ -17,13 +17,13 @@
       {
         "name": "Hambúrguer de Carne",
         "description": "Hambúrguer artesanal com carne de qualidade.",
-        "price": "R$ 24,90",
+        "price": 19.90,
         "imageSrc": "/images/hamburguer.jpg"
       },
       {
         "name": "Hambúrguer Vegano",
         "description": "Hambúrguer vegano com falafel e molho especial.",
-        "price": "R$ 22,90",
+        "price": 19.90,
         "imageSrc": "/images/hamburguer_vegano.jpg"
       }
     ],
@@ -31,7 +31,7 @@
       {
         "name": "Cerveja Lata",
         "description": "Cerveja gelada, perfeita para seu pedido.",
-        "price": "R$ 7,50",
+        "price": 19.90,
         "imageSrc": "/images/cerveja.jpg"
       },
       {
@@ -45,13 +45,13 @@
       {
         "name": "Suco de Laranja",
         "description": "Suco natural de laranja, fresco e saboroso.",
-        "price": "R$ 5,50",
+        "price": 19.90,
         "imageSrc": "/images/suco_laranja.jpg"
       },
       {
         "name": "Suco de Manga",
         "description": "Suco de manga natural e refrescante.",
-        "price": "R$ 5,50",
+        "price": 19.90,
         "imageSrc": "/images/suco_manga.jpg"
       }
     ],
@@ -59,13 +59,13 @@
       {
         "name": "Coca-Cola",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/coca_cola.jpg"
       },
       {
         "name": "Guaraná Antarctica",
         "description": "O sabor refrescante de guaraná.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/guarana.jpg"
       }
     ],
@@ -73,13 +73,13 @@
       {
         "name": "Moster",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/coca_cola.jpg"
       },
       {
         "name": "RedBull",
         "description": "RedBull te da assas.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/guarana.jpg"
       }
     ]
@@ -88,13 +88,13 @@
       {
         "name": "Danil's",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/coca_cola.jpg"
       },
       {
         "name": "whisky 98",
         "description": "RedBull te da assas.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/guarana.jpg"
       }
     ],
@@ -102,13 +102,13 @@
       {
         "name": "Vinho 87",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/coca_cola.jpg"
       },
       {
         "name": "Vinho 89",
         "description": "RedBull te da assas.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/guarana.jpg"
       }
     ],
@@ -116,13 +116,13 @@
       {
         "name": "guloseima 1",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/coca_cola.jpg"
       },
       {
         "name": "guloseima 2",
         "description": "RedBull te da assas.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/guarana.jpg"
       }
     ],
@@ -130,13 +130,13 @@
       {
         "name": "Moster",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/coca_cola.jpg"
       },
       {
         "name": "RedBull",
         "description": "RedBull te da assas.",
-        "price": "R$ 6,00",
+        "price": 19.90,
         "imageSrc": "/images/guarana.jpg"
       }
     ]

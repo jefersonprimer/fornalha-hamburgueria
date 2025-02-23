@@ -152,7 +152,9 @@ export default function Header() {
           id="header-menu"
           className="mdl-button mdl-js-button header-button header-signin js-header-signin border-r-10 flex items-center"
         >
+          <Link href="/login">
           <span className="text-white hover:text-[#F80305]">Entre ou Cadastre-se</span>
+          </Link>
           <svg
             className="header-svg-icon w-5 h-5 ml-2"
             xmlns="http://www.w3.org/2000/svg"
