@@ -29,7 +29,7 @@ export default function SectionsMenu() {
       const price = parseFloat(selectedItem.price);
       addToCart({ ...selectedItem, id: selectedItem.id, price, quantity });
       closeModal();
-      router.push("/pedidos");
+      
     }
   };
 
@@ -69,7 +69,7 @@ export default function SectionsMenu() {
                   key={itemIndex}
                   name={item.name}
                   description={item.description}
-                  price={item.price}
+                  price={`R$ ${item.price}`}
                   imageSrc={item.imageSrc}
                   onClick={() => openModal(item)}
                 />

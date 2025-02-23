@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createContext, useContext, useState } from "react";
 
@@ -8,6 +8,7 @@ const CartContext = createContext(null);
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
+  // Função para adicionar um item ao carrinho
   const addToCart = (item) => {
     setCart((prevCart) => {
       // Verifica se o item já existe no carrinho (mesmo ID e mesmo nome)
@@ -29,8 +30,24 @@ export function CartProvider({ children }) {
     });
   };
 
+  // Função para atualizar a quantidade de um item (aumentar ou diminuir)
+  const updateCart = (id, quantityChange) => {
+    setCart((prevCart) =>
+      prevCart.map((cartItem) =>
+        cartItem.id === id
+          ? { ...cartItem, quantity: Math.max(cartItem.quantity + quantityChange, 1) } // Evita quantidade negativa
+          : cartItem
+      )
+    );
+  };
+
+  // Função para remover um item do carrinho
+  const removeFromCart = (id) => {
+    setCart((prevCart) => prevCart.filter((cartItem) => cartItem.id !== id));
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, updateCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

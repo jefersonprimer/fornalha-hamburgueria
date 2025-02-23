@@ -4,13 +4,13 @@
         "name": "Porção de Batatas",
         "description": "Batatas crocantes com tempero especial.",
         "price": 19.90,
-        "imageSrc": "/images/batata.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "Porção de Frango Frito",
         "description": "Frango frito crocante, com molho especial.",
         "price": 19.90,
-        "imageSrc": "/images/frango.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "lanches": [
@@ -18,13 +18,13 @@
         "name": "Hambúrguer de Carne",
         "description": "Hambúrguer artesanal com carne de qualidade.",
         "price": 19.90,
-        "imageSrc": "/images/hamburguer.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "Hambúrguer Vegano",
         "description": "Hambúrguer vegano com falafel e molho especial.",
         "price": 19.90,
-        "imageSrc": "/images/hamburguer_vegano.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "cervejas": [
@@ -32,13 +32,13 @@
         "name": "Cerveja Lata",
         "description": "Cerveja gelada, perfeita para seu pedido.",
         "price": 19.90,
-        "imageSrc": "/images/cerveja.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "Cerveja Long Neck",
         "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
-        "price": "R$ 9,90",
-        "imageSrc": "/images/cerveja_longneck.jpg"
+        "price": 9.90,
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "sucos": [
@@ -46,13 +46,13 @@
         "name": "Suco de Laranja",
         "description": "Suco natural de laranja, fresco e saboroso.",
         "price": 19.90,
-        "imageSrc": "/images/suco_laranja.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "Suco de Manga",
         "description": "Suco de manga natural e refrescante.",
         "price": 19.90,
-        "imageSrc": "/images/suco_manga.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "refrigerantes": [
@@ -60,13 +60,13 @@
         "name": "Coca-Cola",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
         "price": 19.90,
-        "imageSrc": "/images/coca_cola.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "Guaraná Antarctica",
         "description": "O sabor refrescante de guaraná.",
         "price": 19.90,
-        "imageSrc": "/images/guarana.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "energetico": [
@@ -74,13 +74,13 @@
         "name": "Moster",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
         "price": 19.90,
-        "imageSrc": "/images/coca_cola.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "RedBull",
         "description": "RedBull te da assas.",
         "price": 19.90,
-        "imageSrc": "/images/guarana.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ]
     ,
@@ -89,13 +89,13 @@
         "name": "Danil's",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
         "price": 19.90,
-        "imageSrc": "/images/coca_cola.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "whisky 98",
         "description": "RedBull te da assas.",
         "price": 19.90,
-        "imageSrc": "/images/guarana.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "vinhos": [
@@ -103,13 +103,13 @@
         "name": "Vinho 87",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
         "price": 19.90,
-        "imageSrc": "/images/coca_cola.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "Vinho 89",
         "description": "RedBull te da assas.",
         "price": 19.90,
-        "imageSrc": "/images/guarana.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "guloseimas": [
@@ -117,13 +117,13 @@
         "name": "guloseima 1",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
         "price": 19.90,
-        "imageSrc": "/images/coca_cola.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "guloseima 2",
         "description": "RedBull te da assas.",
         "price": 19.90,
-        "imageSrc": "/images/guarana.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ],
     "refeições": [
@@ -131,13 +131,13 @@
         "name": "Moster",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
         "price": 19.90,
-        "imageSrc": "/images/coca_cola.jpg"
+        "imageSrc": "/hamburguer.png"
       },
       {
         "name": "RedBull",
         "description": "RedBull te da assas.",
         "price": 19.90,
-        "imageSrc": "/images/guarana.jpg"
+        "imageSrc": "/hamburguer.png"
       }
     ]
   }

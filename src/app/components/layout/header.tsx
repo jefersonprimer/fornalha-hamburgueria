@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa"; // Biblioteca de ícones do React
 
 import DeliveryModal from "../modal/DeliveryModal"; // Importa o Modal de entrega
-import Modal from "../modal/Modal"; // Importa o Modal de cupons
+import Modal from "../modal/CuponsModal"; // Importa o Modal de cupons
 
 import { useState } from "react";
 import menuData from "../../../data/menuData.json";  // Dados do JSON com itens de menu
@@ -79,21 +79,9 @@ export default function Header() {
         <Image src="/logo.png" alt="Logo" width={180} height={100} />
       </Link>
 
-      {/* Opções de Entrega */}
-      <div className="flex flex-col text-white">
-        <span className="navbar-opcao-entrega abrir-modal-opcao-entrega">
-          <label
-            className="label label-white text-white flex items-center gap-1 cursor-pointer hover:text-[#F80305]"
-            onClick={openDeliveryModal}
-          >
-            Opções de entrega <FaChevronDown />
-          </label>
-          <small className="text-white hover:text-[#F80305]">Insira um endereço aqui...</small>
-        </span>
-      </div>
+      
 
-      {/* Modal de opções de entrega */}
-      <DeliveryModal isOpen={isDeliveryModalOpen} onClose={closeDeliveryModal} />
+     
 
       {/* Barra de Pesquisa */}
       <div className="relative">
@@ -197,7 +185,7 @@ export default function Header() {
                   <div className="w-3/4">
                     <h3 className="text-xl font-semibold">{item.name}</h3>
                     <p className="text-gray-500">{item.description}</p>
-                    <p className="font-bold text-lg">{item.price}</p>
+                    <p className="font-bold text-lg">{`R$ ${item.price}`}</p>
                   </div>
                 </div>
                 

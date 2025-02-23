@@ -1,7 +1,21 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import Carrinho from "./components/Carrinho";
 import { useCart } from "../context/CartContext";
+
+// Função para calcular o preço total do carrinho
+const calcularTotalCarrinho = (cart: any[], desconto: number) => {
+  return cart.reduce((total, item) => {
+    let price =
+      typeof item.price === "string"
+        ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
+        : item.price;
+
+    if (isNaN(price)) price = 0;
+    return total + price * item.quantity;
+  }, 0) * (1 - desconto); // Aplica o desconto porcentual diretamente
+};
 
 export default function Pedidos() {
   const { cart } = useCart();
@@ -9,48 +23,27 @@ export default function Pedidos() {
   const [rua, setRua] = useState("");
   const [casa, setCasa] = useState("");
   const [referencia, setReferencia] = useState("");
+  const [cupom, setCupom] = useState(""); // Estado para o cupom
+  const [desconto, setDesconto] = useState(0); // Desconto inicial é zero
 
-  // Função para obter a localização e buscar o endereço
-  useEffect(() => {
-    const getLocation = () => {
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(
-          async (position) => {
-            const { latitude, longitude } = position.coords;
-            console.log(`Lat: ${latitude}, Long: ${longitude}`);
-            await getAddress(latitude, longitude); // Buscar endereço
-          },
-          (error) => {
-            console.error("Erro ao obter localização:", error);
-          }
-        );
-      } else {
-        console.error("Geolocalização não suportada no navegador.");
-      }
-    };
-
-    getLocation();
-  }, []);
-
-  // Função para buscar o endereço com a API do OpenStreetMap (Nominatim)
-  const getAddress = async (latitude: number, longitude: number) => {
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-      );
-      const data = await response.json();
-      console.log("Endereço obtido:", data);
-
-      if (data.address) {
-        setBairro(data.address.suburb || data.address.city || "");
-        setRua(data.address.road || "");
-      }
-    } catch (error) {
-      console.error("Erro ao buscar endereço:", error);
+  // Função para aplicar o cupom de desconto
+  const aplicarCupom = () => {
+    // Verifique se o cupom é válido
+    if (cupom === "DESCONTO10") {
+      setDesconto(0.1); // Aplica 10% de desconto
+      alert("Cupom de desconto aplicado com sucesso!");
+    } else {
+      alert("Cupom inválido.");
+      setDesconto(0); // Resetando o desconto se o cupom for inválido
     }
   };
 
   const enviarPedido = () => {
+    console.log("Bairro:", bairro);
+    console.log("Rua:", rua);
+    console.log("Casa:", casa);
+    console.log("Referência:", referencia);
+
     if (!bairro || !rua || !casa) {
       alert("Por favor, preencha todos os campos do endereço!");
       return;
@@ -61,10 +54,13 @@ export default function Pedidos() {
       return;
     }
 
+    // Calcule o total com o desconto
+    const totalComDesconto = calcularTotalCarrinho(cart, desconto).toFixed(2);
+
     const itensPedido = cart
       .map((item) => {
         let price = typeof item.price === "string"
-          ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
+          ? parseFloat(item.price.replace("R$", "").trim().replace(",", ".")) 
           : item.price;
 
         if (isNaN(price)) price = 0;
@@ -75,7 +71,9 @@ export default function Pedidos() {
 
     const endereco = `🏠 *Endereço de entrega:*\n📍 Bairro: ${bairro}\n📍 Rua: ${rua}\n🏡 Casa: ${casa}\n📝 Referência: ${referencia || "Nenhuma"}`;
 
-    const mensagem = `Olá! Quero fazer um pedido:\n\n${itensPedido}\n\n${endereco}\n\n🚀 *Aguardo a confirmação!*`;
+    // Inclua o valor com desconto na mensagem
+    const mensagem = `Olá! Quero fazer um pedido:\n\n${itensPedido}\n\n${endereco}\n\n🚀 *Total com desconto: R$ ${totalComDesconto}* \n\nAguardo a confirmação!`;
+
     const telefone = "55996625561";
     const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
@@ -88,69 +86,90 @@ export default function Pedidos() {
       {cart.length === 0 ? (
         <p>Seu carrinho está vazio.</p>
       ) : (
-        <div>
-          <ul className="space-y-4">
-            {cart.map((item, index) => {
-              let price = typeof item.price === "string"
-                ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
-                : item.price;
+        <>
+          <Carrinho />
 
-              if (isNaN(price)) price = 0;
-              const totalPrice = price * item.quantity;
+          {/* Exibição do endereço */}
+          <div className="mt-6">
+            <h2 className="text-2xl font-semibold">Endereço de Entrega</h2>
 
-              return (
-                <li key={`${item.id}-${index}`} className="flex justify-between items-center border p-4 rounded-lg">
-                  <div>
-                    <h2 className="text-xl font-semibold">{item.name}</h2>
-                    <p className="text-gray-600">Quantidade: {item.quantity}</p>
-                    <p className="text-gray-800 font-bold">R$ {totalPrice.toFixed(2)}</p>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+            <div className="mt-4">
+              <label className="block text-sm font-semibold">Bairro</label>
+              <input
+                type="text"
+                value={bairro}
+                onChange={(e) => setBairro(e.target.value)}
+                className="w-full p-2 border rounded-md mt-2"
+                placeholder="Digite o bairro"
+              />
+            </div>
 
-          {/* Seção do Endereço */}
-          <div className="mt-8 p-4 border rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">Endereço de Entrega</h2>
+            <div className="mt-4">
+              <label className="block text-sm font-semibold">Rua</label>
+              <input
+                type="text"
+                value={rua}
+                onChange={(e) => setRua(e.target.value)}
+                className="w-full p-2 border rounded-md mt-2"
+                placeholder="Digite a rua"
+              />
+            </div>
+
+            <div className="mt-4">
+              <label className="block text-sm font-semibold">Casa / Número</label>
+              <input
+                type="text"
+                value={casa}
+                onChange={(e) => setCasa(e.target.value)}
+                className="w-full p-2 border rounded-md mt-2"
+                placeholder="Número da casa"
+              />
+            </div>
+
+            <div className="mt-4">
+              <label className="block text-sm font-semibold">Ponto de Referência (opcional)</label>
+              <input
+                type="text"
+                value={referencia}
+                onChange={(e) => setReferencia(e.target.value)}
+                className="w-full p-2 border rounded-md mt-2"
+                placeholder="Digite um ponto de referência (opcional)"
+              />
+            </div>
+          </div>
+
+          {/* Seção de Cupom */}
+          <div className="mt-6">
+            <h2 className="text-2xl font-semibold">Cupom de Desconto</h2>
             <input
               type="text"
-              placeholder="Bairro"
-              value={bairro}
-              onChange={(e) => setBairro(e.target.value)}
-              className="w-full p-2 border rounded mb-2"
+              value={cupom}
+              onChange={(e) => setCupom(e.target.value)}
+              className="w-full p-2 border rounded-md mt-2"
+              placeholder="Digite o código do cupom"
             />
-            <input
-              type="text"
-              placeholder="Rua"
-              value={rua}
-              onChange={(e) => setRua(e.target.value)}
-              className="w-full p-2 border rounded mb-2"
-            />
-            <input
-              type="text"
-              placeholder="Casa / Número"
-              value={casa}
-              onChange={(e) => setCasa(e.target.value)}
-              className="w-full p-2 border rounded mb-2"
-            />
-            <input
-              type="text"
-              placeholder="Ponto de Referência (opcional)"
-              value={referencia}
-              onChange={(e) => setReferencia(e.target.value)}
-              className="w-full p-2 border rounded mb-4"
-            />
-
-            {/* Botão de Fechar Pedido */}
             <button
-              onClick={enviarPedido}
-              className="w-full bg-green-500 text-white p-3 rounded-lg font-bold text-lg"
+              onClick={aplicarCupom}
+              className="w-full bg-blue-500 text-white p-3 rounded-lg font-bold text-lg mt-4"
             >
-              📩 Fechar Pedido via WhatsApp
+              Aplicar Cupom
             </button>
           </div>
-        </div>
+
+          {/* Exibindo o total */}
+          <div className="mt-6">
+            <h2 className="text-2xl font-semibold">Total do Pedido</h2>
+            <p className="text-xl font-bold mt-2">R$ {calcularTotalCarrinho(cart, desconto).toFixed(2)}</p>
+          </div>
+
+          {/* Botão para enviar o pedido */}
+          <button
+            onClick={enviarPedido}
+            className="w-full bg-green-500 text-white p-3 rounded-lg font-bold text-lg mt-6"
+          >
+            📩 Fechar Pedido via WhatsApp
+          </button>
+        </>
       )}
     </div>
   );

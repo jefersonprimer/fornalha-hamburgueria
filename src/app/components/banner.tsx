@@ -10,8 +10,8 @@ interface BannerImage {
 const Banner: React.FC = () => {
   const images: BannerImage[] = [
     { src: "https://files.menudino.com/capas/bares-restaurantes-03.webp", alt: "Banner 1" },
-    { src: "", alt: "Banner 3" },
-    { src: "", alt: "Banner 2" },
+    { src: "https://files.menudino.com/capas/bares-restaurantes-03.webp", alt: "Banner 3" },
+    { src: "https://files.menudino.com/capas/bares-restaurantes-03.webp", alt: "Banner 2" },
   ];
 
   const logoSrc = "https://files.menudino.com/cardapios/63227/logo.png";
