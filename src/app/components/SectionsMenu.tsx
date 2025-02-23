@@ -62,7 +62,7 @@ export default function SectionsMenu() {
       <div className="max-w-6xl mx-auto">
         {Object.keys(data).map((section, index) => (
           <section key={index} id={section} className="mb-12 pt-20">
-            <h2 className="text-2xl font-bold mb-4 text-white">{section.toUpperCase()}</h2>
+            <h2 className="text-2xl font-bold mb-4 text-[#F80305]">{section.toUpperCase()}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {data[section].map((item: any, itemIndex: number) => (
                 <MenuItem
