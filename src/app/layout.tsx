@@ -29,8 +29,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         {/* Favicon Manual */}
-        <link rel="icon" href="/logo.png" />
-        <link rel="icon" href="/hamburguer-de-queijo.png" />
+        <link rel="icon" href="/favicon.jpg" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

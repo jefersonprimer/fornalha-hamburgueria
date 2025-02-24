@@ -49,10 +49,14 @@ export default function SectionsMenu() {
             <li key={section}>
               <button
                 onClick={() => scrollToSection(section)}
-                className="text-lg font-semibold text-white hover:text-[#F80305] transition"
+                className="relative text-lg font-semibold text-white hover:text-[#F80305] transition 
+                          after:content-[''] after:absolute after:left-0 after:bottom-[-14px] 
+                          after:w-full after:h-[2px] after:bg-transparent after:transition-all 
+                          hover:after:bg-[#F80305]"
               >
                 {section.toUpperCase()}
               </button>
+
             </li>
           ))}
         </ul>
@@ -62,7 +66,7 @@ export default function SectionsMenu() {
       <div className="max-w-6xl mx-auto">
         {Object.keys(data).map((section, index) => (
           <section key={index} id={section} className="mb-12 pt-20">
-            <h2 className="text-2xl font-bold mb-4 text-[#F80305]">{section.toUpperCase()}</h2>
+            <h2 className="text-2xl font-bold mb-4 text-[#46464D]">{section.toUpperCase()}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {data[section].map((item: any, itemIndex: number) => (
                 <MenuItem
@@ -83,8 +87,9 @@ export default function SectionsMenu() {
       {selectedItem && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg w-96 relative">
-            <h3 className="text-2xl font-bold">{selectedItem.name}</h3>
-            <h2 className="text-2xl font-bold">{selectedItem.description}</h2>
+            <h3 className="text-2xl text-[#46464D] font-bold">{selectedItem.name}</h3>
+            <h2 className=" text-[#46464D] font-bold">{selectedItem.description}</h2>
+            <img src={selectedItem.imageSrc} alt={selectedItem.name} />
             <button onClick={closeModal} className="absolute top-2 right-2 text-gray-500 text-2xl">
               &times;
             </button>

@@ -76,12 +76,8 @@ export default function Header() {
     <header className="flex items-center justify-between p-2 px-6 bg-[#171312] shadow-md">
       {/* Logo */}
       <Link href="/">
-        <Image src="/logo.png" alt="Logo" width={180} height={100} />
+        <Image src="/new-logo.png" alt="Logo" width={180} height={100} />
       </Link>
-
-      
-
-     
 
       {/* Barra de Pesquisa */}
       <div className="relative">
@@ -90,7 +86,7 @@ export default function Header() {
           placeholder="Buscar..."
           value={searchTerm}
           onChange={handleSearch}
-          className="pl-8 pr-10 py-2 border focus:outline-none focus:ring-2 focus:ring-[#F80305] text-black"
+          className="pl-8 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#F80305] text-black"
         />
         <svg
           className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white w-5 h-5"
@@ -111,15 +107,27 @@ export default function Header() {
 
       {/* Links de Navegação */}
       <nav className="flex gap-4">
-        <Link href="/" className="text-white hover:text-[#F80305]">Cardápio</Link>
-        <Link href="/pedidos" className="text-white hover:text-[#F80305]">Pedidos</Link>
-        <a href="#" onClick={openModal} className="text-white hover:text-[#F80305]">Cupons</a>
-        <a href="#" onMouseEnter={() => setIsHoursModalVisible(true)} onMouseLeave={() => setIsHoursModalVisible(false)}className="text-white hover:text-[#F80305]">Horários</a>
+        <Link href="/" className="relative text-white hover:text-[#F80305] transition 
+                          after:content-[''] after:absolute after:left-0 after:bottom-[-22px] 
+                          after:w-full after:h-[2px] after:bg-transparent after:transition-all 
+                          hover:after:bg-[#F80305]">Cardápio</Link>
+        <Link href="/pedidos" className="relative  text-white hover:text-[#F80305] transition 
+                          after:content-[''] after:absolute after:left-0 after:bottom-[-22px]
+                          after:w-full after:h-[2px] after:bg-transparent after:transition-all 
+                          hover:after:bg-[#F80305]">Pedidos</Link>
+        <a href="#" onClick={openModal} className="relative text-white hover:text-[#F80305] transition 
+                          after:content-[''] after:absolute after:left-0 after:bottom-[-22px]
+                          after:w-full after:h-[2px] after:bg-transparent after:transition-all 
+                          hover:after:bg-[#F80305]">Cupons</a>
+        <a href="#" onMouseEnter={() => setIsHoursModalVisible(true)} onMouseLeave={() => setIsHoursModalVisible(false)}className="relative text-white hover:text-[#F80305] transition 
+                          after:content-[''] after:absolute after:left-0 after:bottom-[-22px]
+                          after:w-full after:h-[2px] after:bg-transparent after:transition-all 
+                          hover:after:bg-[#F80305]">Horários</a>
       </nav>
 
         {/* Modal exibido ao passar o mouse */}
         {isHoursModalVisible && (
-            <div className="absolute mt-12 mr-20 top-5 right-20 w-84 bg-white text-black p-4 shadow-lg z-50">
+            <div className="absolute mt-[55px] mr-[200px] top-5 right-20 w-84 bg-white text-black p-4 shadow-lg z-50">
               <h3 className="text-lg font-bold mb-2">Horários de Funcionamento</h3>
               <ul className="text-sm">
                 <li><strong>DOM:</strong> 18:00 às 23:00</li>
@@ -164,31 +172,30 @@ export default function Header() {
       {/* Modal de Pesquisa */}
       {isSearchModalOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-10">
-          <div className="bg-white p-6 rounded-lg w-3/4 max-w-md">
+          <div className="bg-white p-6 rounded-lg w-[600px] h-[80%] max-h-[800px]">
             <h2 className="text-xl font-bold mb-4">Resultados da Pesquisa</h2>
-            <div className="max-h-60 overflow-y-auto">
+            <div className="h-[80%] max-h-[800px] overflow-y-auto">
               {filteredItems.length > 0 ? (
                 filteredItems.map((item, index) => (
                   <div key={index} className="mb-4 p-4 border-b flex items-center">
-                  {/* Imagem do item */}
-                  <div className="w-1/4 mr-4">
-                    <Image
-                      src={item.imageUrl} // Aqui, você deve garantir que 'item.imageUrl' é a URL da imagem
-                      alt={item.name}
-                      width={80} // Ajuste o tamanho conforme necessário
-                      height={80} // Ajuste o tamanho conforme necessário
-                      className="object-cover rounded-lg"
-                    />
+                    {/* Imagem do item */}
+                    <div className="w-1/4 mr-4">
+                      <Image
+                        src={item.imageSrc} // Aqui, você deve garantir que 'item.imageUrl' é a URL da imagem
+                        alt={item.name}
+                        width={80} // Ajuste o tamanho conforme necessário
+                        height={80} // Ajuste o tamanho conforme necessário
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
+
+                    {/* Informações do item */}
+                    <div className="w-3/4">
+                      <h3 className="text-xl font-semibold">{item.name}</h3>
+                      <p className="text-gray-500">{item.description}</p>
+                      <p className="font-bold text-lg">{`R$ ${item.price}`}</p>
+                    </div>
                   </div>
-                
-                  {/* Informações do item */}
-                  <div className="w-3/4">
-                    <h3 className="text-xl font-semibold">{item.name}</h3>
-                    <p className="text-gray-500">{item.description}</p>
-                    <p className="font-bold text-lg">{`R$ ${item.price}`}</p>
-                  </div>
-                </div>
-                
                 ))
               ) : (
                 <p className="text-center text-gray-500">Nenhum item encontrado.</p>
@@ -203,6 +210,7 @@ export default function Header() {
           </div>
         </div>
       )}
+
     </header>
   );
 }
