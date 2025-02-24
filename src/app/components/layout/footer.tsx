@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
@@ -9,7 +10,9 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo */}
           <div className="text-center md:text-left">
-            <img src="/logo-removebg-preview.png" alt="logo" className="w-40 mx-auto md:mx-0" />
+            <Link href="/">
+              <img src="/logo-removebg-preview.png" alt="logo" className="w-40 mx-auto md:mx-0" />
+            </Link>
           </div>
 
           {/* Menu institucional */}

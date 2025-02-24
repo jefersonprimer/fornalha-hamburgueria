@@ -76,7 +76,7 @@ export default function Header() {
     <header className="flex items-center justify-between p-2 px-6 bg-[#171312] shadow-md">
       {/* Logo */}
       <Link href="/">
-        <Image src="/new-logo.png" alt="Logo" width={180} height={100} />
+        <Image src="/logo.png" alt="Logo" width={180} height={100} />
       </Link>
 
       {/* Barra de Pesquisa */}
