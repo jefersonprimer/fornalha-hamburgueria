@@ -1,48 +1,65 @@
-"use client";
+"use client"
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
-// Criando o contexto do carrinho
-const CartContext = createContext(null);
+// Defina a interface para o contexto
+interface CartItem {
+  id: number; // ID como number
+  quantity: number;
+  name: string;
+  description: string;
+  price: number;
+  imageSrc: string;
+  extras?: { id: number; name: string; price: number }[];
+}
 
-export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+interface CartContextType {
+  cart: CartItem[];
+  addToCart: (item: CartItem) => void;
+  updateCart: (id: number, quantityChange: number) => void; // ID como number
+  removeFromCart: (id: number) => void; // ID como number
+}
 
-  // Função para adicionar um item ao carrinho
-  const addToCart = (item) => {
+// Defina um contexto com um valor inicial vazio (será sobrescrito pelo provider)
+const CartContext = createContext<CartContextType | undefined>(undefined);
+
+// Defina o tipo das props do Provider
+interface CartProviderProps {
+  children: ReactNode;
+}
+
+export function CartProvider({ children }: CartProviderProps) {
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  const addToCart = (item: CartItem) => {
     setCart((prevCart) => {
-      // Verifica se o item já existe no carrinho (mesmo ID e mesmo nome)
       const existingItem = prevCart.find(
-        (cartItem) => cartItem.id === item.id && cartItem.name === item.name
+        (cartItem) => cartItem.id === item.id
       );
 
       if (existingItem) {
-        // Se já existe, apenas aumenta a quantidade do item certo
         return prevCart.map((cartItem) =>
-          cartItem.id === item.id && cartItem.name === item.name
+          cartItem.id === item.id
             ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
             : cartItem
         );
       } else {
-        // Se for um novo item, adiciona ao carrinho corretamente
         return [...prevCart, { ...item }];
       }
     });
   };
 
-  // Função para atualizar a quantidade de um item (aumentar ou diminuir)
-  const updateCart = (id, quantityChange) => {
+  const updateCart = (id: number, quantityChange: number) => {
     setCart((prevCart) =>
       prevCart.map((cartItem) =>
         cartItem.id === id
-          ? { ...cartItem, quantity: Math.max(cartItem.quantity + quantityChange, 1) } // Evita quantidade negativa
+          ? { ...cartItem, quantity: Math.max(cartItem.quantity + quantityChange, 1) }
           : cartItem
       )
     );
   };
 
-  // Função para remover um item do carrinho
-  const removeFromCart = (id) => {
+  const removeFromCart = (id: number) => {
     setCart((prevCart) => prevCart.filter((cartItem) => cartItem.id !== id));
   };
 
@@ -53,7 +70,13 @@ export function CartProvider({ children }) {
   );
 }
 
-// Hook para acessar o carrinho
+// Hook para acessar o contexto
 export function useCart() {
-  return useContext(CartContext);
+  const context = useContext(CartContext);
+
+  if (!context) {
+    throw new Error("useCart deve ser usado dentro de um CartProvider");
+  }
+
+  return context;
 }

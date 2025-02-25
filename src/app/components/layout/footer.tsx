@@ -32,10 +32,10 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-center md:text-left">Contato</h3>
             <ul className="space-y-2 text-center md:text-left">
               <li><a href="/contato" className="hover:text-gray-400">Entre em Contato</a></li>
-              <li><span className="block">Centro</span></li>
-              <li><span className="block">Frederico Westphalen</span></li>
-              <li><span className="block">Frederico Westphalen - Rs</span></li>
-              <li><span className="block">(17) 99271-9357</span></li>
+              <li><span className="block">Rua do Comércio 441 Centro</span></li>
+              <li><span className="block">Frederico Westphalen 98400000 - Rs</span></li>
+              <li><span className="block">📞(55) 3744-1604</span></li>
+              <li><span className="block">📞(55) 99686-9185</span></li>
               <li><span className="block">contato@fornalha.com.br</span></li>
             </ul>
           </div>
@@ -44,11 +44,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-semibold text-center justify-center text-align-center md:text-left">Redes Sociais</h3>
             <div className="flex  space-x-6 mt-2 mb-2">
-              <a href="https://facebook.com" className="text-white hover:text-gray-400">
-                <FaFacebook size={24} />
+              <a href="https://www.facebook.com/fornalhafw/" className="text-white hover:text-gray-400">
+                <FaFacebook size={34} />
               </a>
-              <a href="https://instagram.com" className="text-white hover:text-gray-400">
-                <FaInstagram size={24} />
+              <a href="https://www.instagram.com/hamburgueria_fornalha_fw/" className="text-white hover:text-gray-400">
+                <FaInstagram size={34} />
               </a>
             </div>
             <p className="text-center md:text-left">#FORNALHA</p>

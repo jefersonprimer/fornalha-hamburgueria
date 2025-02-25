@@ -2,6 +2,7 @@
 import React from "react";
 
 interface MenuItemProps {
+  id: number;
   name: string;
   description: string;
   price: string;

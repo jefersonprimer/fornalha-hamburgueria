@@ -27,7 +27,21 @@ export function formatarMensagem(
 
       if (isNaN(price)) price = 0;
       const totalPrice = price * item.quantity;
-      return `🍽️ *${item.name}* - ${item.quantity}x (R$ ${totalPrice.toFixed(2)})`;
+
+      // Construir a mensagem do item principal
+      let mensagemItem = `🍽️ *${item.name}* - ${item.quantity}x (R$ ${totalPrice.toFixed(2)})`;
+
+      // Adicionar extras, se houver
+      if (item.extras && item.extras.length > 0) {
+        const extrasMensagem = item.extras
+          .map((extra: any) => {
+            return `  ➕ *${extra.name}* (+R$ ${extra.price.toFixed(2)})`; // Mostra o nome e preço do extra
+          })
+          .join("\n");
+        mensagemItem += `\n${extrasMensagem}`; // Adiciona os extras à mensagem do item
+      }
+
+      return mensagemItem;
     })
     .join("\n");
 

@@ -17,15 +17,23 @@ export default function Pedidos() {
   const [cupom, setCupom] = useState("");
   const [desconto, setDesconto] = useState(0);
   const [observacao, setObservacao] = useState(""); // Novo campo
+  const [alerta, setAlerta] = useState(""); // Estado para o alerta
 
   const handleAplicarCupom = () => {
     aplicarCupom(cupom, setDesconto);
   };
 
   const enviarPedido = () => {
+    const total = calcularTotalCarrinho(cart, desconto);
+
     if (!validarEndereco(bairro, rua, casa)) return;
     if (cart.length === 0) {
-      alert("Seu carrinho está vazio!");
+      setAlerta("Seu carrinho está vazio!"); // Alerta caso o carrinho esteja vazio
+      return;
+    }
+
+    if (total < 15) {
+      setAlerta("O valor mínimo do pedido é R$ 15,00"); // Alerta caso o total seja inferior a R$ 15
       return;
     }
 
@@ -34,6 +42,9 @@ export default function Pedidos() {
     const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
   };
+
+  // Calcular o total do carrinho
+  const totalCarrinho = calcularTotalCarrinho(cart, desconto);
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-gray-400 m-6">
@@ -44,6 +55,13 @@ export default function Pedidos() {
       ) : (
         <>
           <Carrinho />
+
+          {/* Alerta de erro */}
+          {alerta && (
+            <div className="bg-red-500 text-white p-4 rounded-md mb-4">
+              {alerta}
+            </div>
+          )}
 
           {/* Endereço */}
           <div className="mt-6">
@@ -88,11 +106,18 @@ export default function Pedidos() {
           {/* Total */}
           <div className="mt-6">
             <h2 className="text-2xl font-semibold">Total do Pedido</h2>
-            <p className="text-xl font-bold mt-2">R$ {calcularTotalCarrinho(cart, desconto).toFixed(2)}</p>
+            <p className="text-xl font-bold mt-2">R$ {totalCarrinho.toFixed(2)}</p>
           </div>
 
           {/* Botão Pedido */}
-          <button onClick={enviarPedido} className="w-full bg-green-500 text-white p-3 rounded-lg font-bold text-lg mt-6">📩 Fechar Pedido via WhatsApp</button>
+          <button
+            onClick={enviarPedido}
+            className={`w-full p-3 rounded-lg font-bold text-lg mt-6 ${
+              totalCarrinho >= 15 ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-500'
+            }`}
+          >
+            📩 Fechar Pedido via WhatsApp
+          </button>
         </>
       )}
     </div>

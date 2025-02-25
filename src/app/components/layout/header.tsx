@@ -2,13 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaChevronDown } from "react-icons/fa"; // Biblioteca de ícones do React
 
-import DeliveryModal from "../modal/DeliveryModal"; // Importa o Modal de entrega
-import Modal from "../modal/CuponsModal"; // Importa o Modal de cupons
+import Modal from "../modal/CuponsModal";
 
 import { useState } from "react";
-import menuData from "../../../data/menuData.json";  // Dados do JSON com itens de menu
+import menuData from "../../../data/menuData.json"; 
 
 export default function Header() {
   const [isDeliveryModalOpen, setIsDeliveryModalOpen] = useState(false);
@@ -17,17 +15,6 @@ export default function Header() {
   const [filteredItems, setFilteredItems] = useState<any[]>([]);  // Itens filtrados
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);  // Controle do modal de pesquisa
   const [isHoursModalVisible, setIsHoursModalVisible] = useState(false);
-
-  // Função para abrir o modal de entrega
-  const openDeliveryModal = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsDeliveryModalOpen(true);
-  };
-
-  // Função para fechar o modal de entrega
-  const closeDeliveryModal = () => {
-    setIsDeliveryModalOpen(false);
-  };
 
   // Função para abrir o modal de cupons
   const openModal = (e: React.MouseEvent) => {

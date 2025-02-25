@@ -1,0 +1,1 @@
+validade antes de enviar o pedido se e maior que ou igual a 15 reais antes de enviar ou pedido, se for menor o botao fica desabilidado e mostra um aviso que o pedido tem que ser maior ou igual a 15 reais
