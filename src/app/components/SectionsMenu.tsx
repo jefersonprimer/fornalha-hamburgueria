@@ -6,9 +6,11 @@ import menuData from "../../data/menuData.json";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import ExtrasDropdown from "./ExtrasDropdown"; // Importando o componente ExtrasDropdown
+import DestaquesCarrossel from "./DestaquesCarrossel";
 
 interface MenuItemType {
   id: number;
+  isDestaque: boolean;
   name: string;
   description: string;
   price: number;
@@ -19,6 +21,17 @@ interface MenuItemType {
 interface MenuData {
   [key: string]: MenuItemType[];
 }
+
+interface DestaqueType {
+  id: number; // Add the missing `id` property
+  name: string;
+  description: string; // Add the missing `description` property
+  price: number;
+  imageSrc: string;
+  isDestaque: boolean;
+  // Include any other properties that might be required
+}
+
 
 export default function SectionsMenu() {
   const [data] = useState<MenuData>(menuData);
@@ -53,15 +66,20 @@ export default function SectionsMenu() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const offset = 80; // Ajuste para a altura do menu fixo
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
     }
   };
+  
 
   return (
     <div>
+
+
       {/* Menu horizontal fixo no topo das seções */}
-      <nav className="bg-[#1C3B4A] shadow-md sticky top-0">
-        <ul className="flex justify-center gap-4 p-4 overflow-x-auto">
+      <nav className="bg-[#1C3B4A] shadow-md sticky top-0 z-50 mb-10">
+        <ul className="flex sm:justify-start md:justify-center  gap-4 p-4 overflow-x-auto">
           {Object.keys(data).map((section) => (
             <li key={section}>
               <button
@@ -77,10 +95,18 @@ export default function SectionsMenu() {
         </ul>
       </nav>
 
+      {/* <div className="flex justify-start overflow-x-auto w-full">
+        <DestaquesCarrossel
+          destaques={Object.values(data)
+            .flat()
+            .filter((item) => item.isDestaque) as DestaqueType[]}
+        />
+      </div> */}
+
       {/* Seções do Cardápio */}
       <div className="max-w-6xl mx-auto">
         {Object.keys(data).map((section) => (
-          <section key={section} id={section} className="mb-12 pt-20">
+          <section key={section} id={section} className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-[#46464D]">{section.toUpperCase()}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {data[section].map((item, itemIndex) => (
