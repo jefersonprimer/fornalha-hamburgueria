@@ -5,28 +5,34 @@ interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
   filteredItems: any[];
-  searchTerm: string;  // Passando searchTerm do componente pai
-  onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;  // Passando a função de mudança do input
+  searchTerm: string;
+  onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSelectItem: (item: any) => void;  // Nova função passada para selecionar o item
 }
 
-const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, filteredItems, searchTerm, onSearchChange }) => {
-  // Filtra os resultados com base no termo de pesquisa
+const SearchModal: React.FC<SearchModalProps> = ({
+  isOpen,
+  onClose,
+  filteredItems,
+  searchTerm,
+  onSearchChange,
+  handleSelectItem
+}) => {
   const filteredResults = filteredItems.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     item.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (!isOpen) return null; // Não renderiza o modal se não estiver aberto
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-10">
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-lg w-[600px] h-[80%] max-h-[880px]">
         
-        {/* Input de pesquisa */}
         <input
           type="text"
           value={searchTerm}
-          onChange={onSearchChange}  // Usando a função de mudança do input passada como prop
+          onChange={onSearchChange}
           placeholder="Buscar..."
           className="w-full p-2 border border-gray-300 rounded mb-4"
         />
@@ -35,19 +41,21 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, filteredItem
         <div className="h-[70%] max-h-[800px] overflow-y-auto">
           {filteredResults.length > 0 ? (
             filteredResults.map((item, index) => (
-              <div key={index} className="mb-4 p-4 border-b flex items-center">
-                {/* Imagem do item */}
+              <div 
+                key={index} 
+                className="mb-4 p-4 border-b flex items-center cursor-pointer" 
+                onClick={() => handleSelectItem(item)}  // Adicionando o clique
+              >
                 <div className="w-1/4 mr-4">
                   <Image
-                    src={item.imageSrc} // Aqui, você deve garantir que 'item.imageSrc' é a URL da imagem
+                    src={item.imageSrc}
                     alt={item.name}
-                    width={80} // Ajuste o tamanho conforme necessário
-                    height={80} // Ajuste o tamanho conforme necessário
+                    width={80}
+                    height={80}
                     className="object-cover rounded-lg"
                   />
                 </div>
 
-                {/* Informações do item */}
                 <div className="w-3/4">
                   <h3 className="text-xl font-semibold">{item.name}</h3>
                   <p className="text-gray-500">{item.description}</p>

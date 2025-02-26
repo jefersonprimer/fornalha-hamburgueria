@@ -39,7 +39,7 @@ export default function Carrinho() {
 
           // Calculando o preço dos extras
           if (item.extras) {
-            totalExtrasPrice = item.extras.reduce((acc, extra) => acc + extra.price, 0);
+            totalExtrasPrice = item.extras.reduce((acc, extra) => acc + (extra.price * (extra.quantity || 1)), 0); // Agora considera a quantidade do extra
           }
 
           // Garantindo que o preço do item principal seja válido
@@ -52,28 +52,41 @@ export default function Carrinho() {
             <li key={item.id || index} className="flex flex-col justify-between items-start border p-4 rounded-md bg-gray-100">
               {/* Linha principal do item */}
               <div className="flex justify-between items-center mb-2 w-full">
-                <div className="flex flex-row gap-20 justify-center ">
-                  <span className="text-lg font-semibold">{item.name}</span>
-                  <span className="text-gray-800 font-bold">R$ {totalPrice.toFixed(2)}</span>
-                  {/* Botões de adicionar/remover quantidade */}
-                  <div className="flex items-center gap-2 mb-2">
-                    <button
-                      type="button"
-                      onClick={() => diminuirQuantidade(item.id)}
-                      className="text-gray-500 hover:text-gray-700"
-                    >
-                      -
-                    </button>
-                    <span className="text-gray-600">x{item.quantity}</span>
-                    <button
-                      type="button"
-                      onClick={() => adicionarQuantidade(item.id)}
-                      className="text-gray-500 hover:text-gray-700"
-                    >
-                      +
-                    </button>
-                  </div>
+              <div className="flex flex-row gap-20 justify-center items-center">
+                {/* Botões de adicionar/remover quantidade */}
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => diminuirQuantidade(item.id)}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    -
+                  </button>
+                  <span className="text-gray-600">x{item.quantity}</span>
+                  <button
+                    type="button"
+                    onClick={() => adicionarQuantidade(item.id)}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    +
+                  </button>
                 </div>
+
+                {/* Nome do item */}
+                <span className="text-lg font-semibold">{item.name}</span>
+
+                {/* Preço do item */}
+                <span className="text-gray-800 font-bold">R$ {totalPrice.toFixed(2)}</span>
+
+                {/* Botão de remover */}
+                <button
+                  type="button"
+                  onClick={() => reduzirOuRemoverItem(item.id, item.quantity)}
+                  className="text-red-500 hover:text-red-700 font-bold"
+                >
+                  Remover
+                </button>
+              </div>
 
                 {/* Ícone de seta para alternar visibilidade do dropdown */}
                 <button
@@ -93,21 +106,12 @@ export default function Carrinho() {
                       <span>Adicionais: </span>
                       {item.extras.map((extra, extraIndex) => (
                         <span key={extraIndex}>
-                          {extra.name} (+ R$ {extra.price.toFixed(2)})
+                          {extra.quantity}x {extra.name} (+ R$ {(extra.price * extra.quantity!).toFixed(2)})
                           {extraIndex < item.extras.length - 1 && ", "}
                         </span>
                       ))}
                     </div>
                   )}
-
-                  {/* Botão de remover o item */}
-                  <button
-                    type="button"
-                    onClick={() => reduzirOuRemoverItem(item.id, item.quantity)}
-                    className="text-red-500 hover:text-red-700 font-bold"
-                  >
-                    Remover {item.name}
-                  </button>
                 </div>
               )}
             </li>

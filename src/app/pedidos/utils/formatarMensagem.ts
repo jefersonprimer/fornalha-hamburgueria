@@ -5,8 +5,9 @@ export function formatarMensagem(
   casa: string,
   referencia: string,
   desconto: number,
-  observacao: string // Novo campo
+  observacao: string
 ) {
+  // Calculando o total com desconto
   const totalComDesconto =
     cart.reduce((total, item) => {
       let price =
@@ -18,6 +19,7 @@ export function formatarMensagem(
       return total + price * item.quantity;
     }, 0) * (1 - desconto);
 
+  // Montando a mensagem dos itens
   const itensPedido = cart
     .map((item) => {
       let price =
@@ -35,9 +37,19 @@ export function formatarMensagem(
       if (item.extras && item.extras.length > 0) {
         const extrasMensagem = item.extras
           .map((extra: any) => {
-            return `  ➕ *${extra.name}* (+R$ ${extra.price.toFixed(2)})`; // Mostra o nome e preço do extra
+            let extraPrice =
+              typeof extra.price === "string"
+                ? parseFloat(extra.price.replace("R$", "").trim().replace(",", "."))
+                : extra.price;
+
+            if (isNaN(extraPrice)) extraPrice = 0;
+            
+            const extraTotal = extraPrice * extra.quantity; // Multiplica pelo número de vezes que o extra foi selecionado
+            
+            return `  ➕ *${extra.name}* - ${extra.quantity}x (+R$ ${extraTotal.toFixed(2)})`; // Inclui a quantidade correta
           })
           .join("\n");
+
         mensagemItem += `\n${extrasMensagem}`; // Adiciona os extras à mensagem do item
       }
 
@@ -45,6 +57,7 @@ export function formatarMensagem(
     })
     .join("\n");
 
+  // Formatando o endereço
   const endereco = `🏠 *Endereço de entrega:*\n📍 Bairro: ${bairro}\n📍 Rua: ${rua}\n🏡 Casa: ${casa}\n📝 Referência: ${referencia || "Nenhuma"}`;
 
   // Adiciona a observação se houver algo escrito
