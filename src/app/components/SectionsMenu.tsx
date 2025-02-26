@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MenuItem from "./MenuItem";
 import menuData from "../../data/menuData.json";
 import { useCart } from "../context/CartContext";
@@ -26,6 +26,7 @@ export default function SectionsMenu() {
   const [quantity, setQuantity] = useState(1);
   const [selectedExtras, setSelectedExtras] = useState<{ name: string; price: number }[]>([]);
   const { addToCart } = useCart();
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   const openModal = (item: MenuItemType) => setSelectedItem(item);
   const closeModal = () => {
@@ -52,6 +53,25 @@ export default function SectionsMenu() {
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
     }
+  };
+
+  // Função para monitorar o scroll e exibir o botão
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) { // Exibir o botão após rolar 300px para baixo
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Função para rolar para o topo
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -103,6 +123,29 @@ export default function SectionsMenu() {
         handleAddToCart={handleAddToCart}
         closeModal={closeModal}
       />
+
+      {/* Botão de Seta para Cima */}
+      {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 p-3 bg-gray-300 rounded-full text-black shadow-lg hover:bg-[#c70202] transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7-7-7 7"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }

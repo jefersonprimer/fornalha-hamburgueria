@@ -2,6 +2,7 @@ import React from 'react';
 import SectionsMenu from './components/SectionsMenu';
 import Banner from './components/banner';
 import { Metadata } from 'next';
+import HeaderWithStatus from './components/HeaderWithStatus';
 
 export const metadata: Metadata = {
   title: "FORNALHA HAMBURGUERIA E PETISCARIA - Card&#225;pio FORNALHA HAMBURGUERIA E PETISCARIA Frederico Westphalen",
@@ -11,7 +12,8 @@ export const metadata: Metadata = {
 const App: React.FC = () => {
   return (
       <div>
-        <Banner/>
+        <div className='z-48'><Banner/ ></div>
+        <div className='flex justify-center mt-[-10vh] z-49'><HeaderWithStatus/></div>
         <SectionsMenu />
       </div>
   );

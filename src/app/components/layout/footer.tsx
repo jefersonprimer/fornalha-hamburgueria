@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               <li><a href="/quem-somos" className="hover:text-gray-400">Quem Somos</a></li>
               <li><a href="/cupons" className="hover:text-gray-400">Cupons</a></li>
               <li><a href="/cardapio" className="hover:text-gray-400">Cardápio</a></li>
-              <li><a href="/unidades" className="hover:text-gray-400">Unidades</a></li>
+              <li><a href="/fidelidade/campanhas" className="hover:text-gray-400">Fidelidade</a></li>
             </ul>
           </div>
 
