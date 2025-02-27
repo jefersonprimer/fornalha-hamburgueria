@@ -51,15 +51,15 @@ const Banner: React.FC = () => {
       {/* Exibir logo e texto SOMENTE no primeiro banner */}
       {currentImageIndex === 0 && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
-          <img src={logoSrc} alt="Logo" className="w-60 h-60 shadow-lg bg-black bg-opacity-80 rounded-md" />
-          <h1 className="text-white text-2xl font-bold mt-4 text-center">
+          <img src={logoSrc} alt="Logo" className="w-60 h-60 shadow-lg bg-black bg-opacity-80 rounded-md hidden sm:block" />
+          <h1 className="text-white text-2xl font-bold mt-4 text-center hidden sm:block">
             FORNALHA HAMBURGUERIA E PETISCARIA
           </h1>
-          <p className="text-white text-lg mt-2 bg-black bg-opacity-50 px-4 py-1 rounded-md">
+          <p className="text-white text-lg mt-2 bg-black bg-opacity-50 px-4 py-1 rounded-md hidden sm:block">
             Mínimo R$ 15,00
           </p>
           {/* Exibir status da loja */}
-          <p className="text-red-600 font-bold text-lg mt-2 bg-white bg-opacity-50 px-4 py-1 rounded-md">
+          <p className="text-red-600 font-bold text-lg mt-2 bg-white bg-opacity-50 px-4 py-1 rounded-md hidden sm:block">
             {storeStatus === "Aberto" ? "Aberto até às 22h00" : "Fechado - Abrimos às 18h"}
           </p>
         </div>
@@ -68,10 +68,10 @@ const Banner: React.FC = () => {
       {/* Exibir texto SOMENTE no segundo banner */}
       {currentImageIndex === 1 && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
-          <h2 className="text-white text-3xl font-bold text-center">
+          <h2 className="text-white text-3xl font-bold text-center hidden sm:block">
             VARIEDADES E EXPLOSÕES DE SABORES
           </h2>
-          <p className="text-white text-lg mt-2 bg-black bg-opacity-50 px-4 py-1 rounded-md">
+          <p className="text-white text-lg mt-2 bg-black bg-opacity-50 px-4 py-1 rounded-md hidden sm:block">
             CONHEÇA TODOS OS NOSSOS PRATOS DELICIOSOS
           </p>
         </div>
@@ -80,11 +80,11 @@ const Banner: React.FC = () => {
       {/* Exibir texto SOMENTE no terceiro banner */}
       {currentImageIndex === 2 && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
-          <h2 className="text-white text-3xl font-bold text-center">
-            
+          <h2 className="text-white text-3xl font-bold text-center hidden sm:block">
+            {/* Texto vazio, caso queira adicionar algo depois */}
           </h2>
-          <p className="text-white text-lg mt-2 bg-black bg-opacity-50 px-4 py-1 rounded-md">
-          
+          <p className="text-white text-lg mt-2 bg-black bg-opacity-50 px-4 py-1 rounded-md hidden sm:block">
+            {/* Texto vazio */}
           </p>
         </div>
       )}

@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           {/* Redes sociais */}
           <div>
             <h3 className="font-semibold text-center justify-center text-align-center md:text-left">Redes Sociais</h3>
-            <div className="flex  space-x-6 mt-2 mb-2">
+            <div className="flex justify-center items-center space-x-6 mt-2 mb-2 sm:justify-start">
               <a href="https://www.facebook.com/fornalhafw/" className="text-white hover:text-gray-400">
                 <FaFacebook size={34} />
               </a>

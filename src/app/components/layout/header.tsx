@@ -7,6 +7,7 @@ import Modal from "../modal/CuponsModal";
 import SearchModal from "./components/modal/SearchModal";
 import HoursModal from "./components/modal/HoursModal";
 import menuData from "../../../data/menuData.json";
+import Sidebar from "./components/Sidebar";
 
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,12 +16,20 @@ export default function Header() {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isHoursModalVisible, setIsHoursModalVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Função para abrir o modal de cupons
   const openModal = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsModalOpen(true);
+    setIsSidebarOpen(false);
   };
+
+
+  // Função para abrir o modal de cupons
+  // const openModal = (e: React.MouseEvent) => {
+  //   e.preventDefault();
+  //   setIsModalOpen(true);
+  // };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -57,20 +66,8 @@ export default function Header() {
   return (
     <header className="relative flex items-center justify-between p-2 px-6 bg-[#171312] shadow-md">
       {/* Menu Hamburguer */}
-      <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="sm:hidden text-white"
-      >
-        <svg
-          className="w-6 h-6"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+      <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="text-white sm:hidden">
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M3 12h18M3 6h18M3 18h18" />
         </svg>
       </button>
@@ -79,6 +76,9 @@ export default function Header() {
       <Link href="/">
         <Image src="/logo.png" alt="Logo" width={180} height={100} />
       </Link>
+
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} openModal={openModal} />
+      
 
       {/* Barra de Pesquisa */}
       <div className="relative">
@@ -152,7 +152,7 @@ export default function Header() {
       {/* Menu Overlay */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-          <div className="bg-white p-4 rounded-lg w-64">
+          <div className="bg-white p-4 w-[100%] h-[88%] mt-8">
             <nav className="flex flex-col gap-4">
               <Link href="/" className="text-black hover:text-[#F80305]">Cardápio</Link>
               <Link href="/pedidos" className="text-black hover:text-[#F80305]">Pedidos</Link>

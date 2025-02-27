@@ -91,7 +91,7 @@ export default function SectionsMenu() {
         </ul>
       </nav>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4">
         {Object.keys(data).map((section) => (
           <section key={section} id={section} className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-[#46464D]">{section.toUpperCase()}</h2>
