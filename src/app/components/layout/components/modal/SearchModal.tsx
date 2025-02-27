@@ -82,7 +82,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        <div className="h-[70%] max-h-[800px] overflow-y-auto">
+        <div className="h-[88%] max-h-[800px] overflow-y-auto">
           {filteredItems.length > 0 ? (
             filteredItems.map((item, index) => (
               <MenuItem
