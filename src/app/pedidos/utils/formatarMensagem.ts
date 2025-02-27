@@ -16,7 +16,25 @@ export function formatarMensagem(
           : item.price;
 
       if (isNaN(price)) price = 0;
-      return total + price * item.quantity;
+      let itemTotal = price * item.quantity;
+
+      // Adicionar o preço dos extras, se houver
+      if (item.extras && item.extras.length > 0) {
+        const extrasTotal = item.extras.reduce((extraTotal: number, extra: any) => {
+          let extraPrice =
+            typeof extra.price === "string"
+              ? parseFloat(extra.price.replace("R$", "").trim().replace(",", "."))
+              : extra.price;
+
+          if (isNaN(extraPrice)) extraPrice = 0;
+          
+          return extraTotal + extraPrice * extra.quantity; // Multiplica pela quantidade do extra
+        }, 0);
+
+        itemTotal += extrasTotal; // Soma o valor dos extras ao item principal
+      }
+
+      return total + itemTotal;
     }, 0) * (1 - desconto);
 
   // Montando a mensagem dos itens

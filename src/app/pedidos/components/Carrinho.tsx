@@ -86,6 +86,7 @@ export default function Carrinho() {
                 >
                   Remover
                 </button>
+                
               </div>
 
                 {/* Ícone de seta para alternar visibilidade do dropdown */}
