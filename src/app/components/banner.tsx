@@ -23,7 +23,7 @@ const Banner: React.FC = () => {
     // Função para determinar o status de funcionamento da loja
     const getStoreStatus = () => {
       const currentHour = new Date().getHours();
-      if (currentHour >= 18 && currentHour < 22) {
+      if (currentHour >= 18 && currentHour < 23) {
         setStoreStatus("Aberto");
       } else {
         setStoreStatus("Fechado");
@@ -60,7 +60,7 @@ const Banner: React.FC = () => {
           </p>
           {/* Exibir status da loja */}
           <p className="text-red-600 font-bold text-lg mt-2 bg-white bg-opacity-50 px-4 py-1 rounded-md hidden sm:block">
-            {storeStatus === "Aberto" ? "Aberto até às 22h00" : "Fechado - Abrimos às 18h"}
+            {storeStatus === "Aberto" ? "Aberto até às 23h00" : "Fechado - Abrimos às 18h"}
           </p>
         </div>
       )}

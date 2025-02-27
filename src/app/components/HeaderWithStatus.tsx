@@ -76,7 +76,7 @@ const HeaderWithStatus: React.FC = () => {
   useEffect(() => {
     const currentHour = new Date().getHours();
     if (currentHour >= 18 && currentHour < 22) {
-      setStoreStatus("Aberto até às 22h00");
+      setStoreStatus("Aberto até às 23h00");
     } else {
       setStoreStatus("Fechado - Abrimos às 18h");
     }

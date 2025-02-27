@@ -31,7 +31,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, description, price, imageSrc,
       {/* Coluna com o nome, descrição e preço */}
       <div className="flex flex-col flex-grow">
         <h1 className="font-semibold text-[#46464D] uppercase">{name}</h1>
-        <p className="text-[#46464D] mb-2 w-[280px] sm:w-[350px]   text-[14px] sm:text-[16px] line-clamp-3">
+        <p className="text-[#46464D] mb-2 w-[250px] sm:w-[350px]   text-[14px] sm:text-[16px] line-clamp-3">
           {description}
         </p>
 
@@ -43,10 +43,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, description, price, imageSrc,
       <img
         src={imageSrc}
         alt={name}
-        className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[180px] ] object-cover rounded-[5px]"
+        className="w-[140px] h-[140px] sm:w-[150px] sm:h-[150px] md:w-[180px] ] object-cover rounded-[5px]"
       />
-
-
 
       </div>
     </div>

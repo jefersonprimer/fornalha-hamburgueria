@@ -47,7 +47,7 @@ export default function Pedidos() {
   const totalCarrinho = calcularTotalCarrinho(cart, desconto);
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gray-400 m-6">
+    <div className="max-w-4xl mx-auto p-2 sm:p-6 bg-[#F9FAFB] m-6">
       <h1 className="text-3xl font-bold mb-4">Pedidos</h1>
 
       {cart.length === 0 ? (
@@ -104,9 +104,9 @@ export default function Pedidos() {
           </div>
 
           {/* Total */}
-          <div className="mt-6">
-            <h2 className="text-2xl font-semibold">Total do Pedido</h2>
-            <p className="text-xl font-bold mt-2">R$ {totalCarrinho.toFixed(2)}</p>
+          <div className="flex space-x-[65%] justify-center items-center pt-4">
+            <h2 className="text-xl font-semibold">Total</h2>
+            <p className="text-xl font-bold ">R$ {totalCarrinho.toFixed(2)}</p>
           </div>
 
           {/* Botão Pedido */}

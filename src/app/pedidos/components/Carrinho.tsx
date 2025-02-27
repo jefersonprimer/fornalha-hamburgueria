@@ -49,10 +49,10 @@ export default function Carrinho() {
           const totalPrice = (price + totalExtrasPrice) * item.quantity;
 
           return (
-            <li key={item.id || index} className="flex flex-col justify-between items-start border p-4 rounded-md bg-gray-100">
+            <li key={item.id || index} className="flex flex-col justify-between items-start border p-2 rounded-md bg-gray-100">
               {/* Linha principal do item */}
-              <div className="flex justify-between items-center mb-2 w-full">
-              <div className="flex flex-row gap-20 justify-center items-center">
+              <div className="flex justify-between items-center w-full">
+              <div className="flex flex-row gap-5 justify-center items-center">
                 {/* Botões de adicionar/remover quantidade */}
                 <div className="flex items-center gap-2">
                   <button
@@ -73,7 +73,7 @@ export default function Carrinho() {
                 </div>
 
                 {/* Nome do item */}
-                <span className="text-lg font-semibold">{item.name}</span>
+                <span className="text-lg sm:text-sm font-semibold">{item.name}</span>
 
                 {/* Preço do item */}
                 <span className="text-gray-800 font-bold">R$ {totalPrice.toFixed(2)}</span>

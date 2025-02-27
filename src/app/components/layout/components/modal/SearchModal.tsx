@@ -6,6 +6,9 @@ import SelectedItemModal from "../../../SelectedItemModal";
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
+  searchTerm: string;  // Add this line
+  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Add this line
+  filteredItems: any[];  // Add this line
 }
 
 const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
@@ -34,7 +37,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-white p-6 rounded-lg w-[600px] h-[80%] max-h-[880px]"
+        className="bg-[#F4F5F7] p-2 w-full h-full max-w-[600px] max-h-[980px] sm:w-[600px] sm:h-[80%] sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative w-full mb-4">
