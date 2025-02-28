@@ -3,28 +3,36 @@ import useSearch from "../../hooks/useSearch"; // Importe o hook
 import MenuItem from "../../../MenuItem";
 import SelectedItemModal from "../../../SelectedItemModal";
 
+interface Item {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  imageSrc: string;
+}
+
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
-  searchTerm: string;  // Add this line
-  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Add this line
-  filteredItems: any[];  // Add this line
+  searchTerm: string;
+  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  filteredItems: Item[];
 }
 
 const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
-  const { searchTerm, filteredItems, handleSearch } = useSearch(); // Use o hook
-  const [selectedItem, setSelectedItem] = useState<any | null>(null);
+  const { searchTerm, filteredItems, handleSearch } = useSearch();
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [selectedExtras, setSelectedExtras] = useState<any[]>([]);
+  const [selectedExtras, setSelectedExtras] = useState<Item[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => {
         inputRef.current?.focus();
-      }, 100); // Pequeno atraso para garantir o foco
+      }, 100);
     } else {
-      handleSearch(""); // Limpa a busca ao fechar o modal
+      handleSearch("");
       setSelectedItem(null);
     }
   }, [isOpen]);
@@ -41,19 +49,6 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative w-full mb-4">
-          <svg
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M10.5 19C12.4879 19 14.3164 18.3176 15.7641 17.1742L21.2927 22.7069L22.7074 21.2931L17.1778 15.7595C18.319 14.3126 19 12.4858 19 10.5C19 5.80558 15.1944 2 10.5 2C5.80558 2 2 5.80558 2 10.5C2 15.1944 5.80558 19 10.5 19ZM10.5 17C14.0899 17 17 14.0899 17 10.5C17 6.91015 14.0899 4 10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17Z"
-            />
-          </svg>
-
           <input
             ref={inputRef}
             type="text"
@@ -84,17 +79,18 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
 
         <div className="h-[88%] max-h-[800px] overflow-y-auto">
           {filteredItems.length > 0 ? (
-            filteredItems.map((item, index) => (
-              <MenuItem
-                key={`${item.id}-${index}`}
-                id={item.id}
-                name={item.name}
-                description={item.description}
-                price={`R$ ${item.price.toFixed(2).replace(".", ",")}`}
-                imageSrc={item.imageSrc}
-                onClick={() => setSelectedItem(item)}
-              />
-            ))
+          filteredItems.map((item, index) => (
+            <MenuItem
+              key={`${item.id}-${index}`} // Combina id com índice para garantir unicidade
+              id={item.id}
+              name={item.name}
+              description={item.description}
+              price={`R$ ${item.price.toFixed(2).replace(".", ",")}`}
+              imageSrc={item.imageSrc}
+              onClick={() => setSelectedItem(item)}
+            />
+          ))
+          
           ) : (
             <p className="text-center text-gray-500">Nenhum item encontrado.</p>
           )}

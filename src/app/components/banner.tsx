@@ -19,8 +19,8 @@ const Banner: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [storeStatus, setStoreStatus] = useState("");
 
+  // Calcular o status de funcionamento da loja apenas no cliente
   useEffect(() => {
-    // Função para determinar o status de funcionamento da loja
     const getStoreStatus = () => {
       const currentHour = new Date().getHours();
       if (currentHour >= 18 && currentHour < 23) {

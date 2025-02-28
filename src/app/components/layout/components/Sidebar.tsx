@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import HoursModal from "./modal/SideBarHoursModal"; // Importando o modal de Horários
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HoursModal from "./modal/SideBarHoursModal";
 
 interface SidebarProps {
   isOpen: boolean;

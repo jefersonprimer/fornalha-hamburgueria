@@ -12,7 +12,7 @@ import Sidebar from "./components/Sidebar";
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<MenuItem[]>([]);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isHoursModalVisible, setIsHoursModalVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,12 +47,13 @@ export default function Header() {
     const query = event.target.value.toLowerCase();
     setSearchTerm(query);
 
-    const result = Object.values(menuData)
-      .flat()
-      .filter((item: any) =>
-        item.name.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query)
-      );
+    const result: MenuItem[] = Object.values(menuData)
+    .flat()
+    .filter((item) =>
+      item.name.toLowerCase().includes(query) ||
+      item.description.toLowerCase().includes(query)
+    );
+
 
     setFilteredItems(result);
 

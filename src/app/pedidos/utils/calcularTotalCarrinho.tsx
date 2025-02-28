@@ -1,22 +1,34 @@
-export const calcularTotalCarrinho = (cart: any[], desconto: number) => {
-  return cart.reduce((total, item) => {
-    // Calcular o preço do item principal
-    let price =
-      typeof item.price === "string"
-        ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
-        : item.price;
+interface ExtraItem {
+  name: string;
+  price: number;
+}
 
-    if (isNaN(price)) price = 0;
+interface CartItem {
+  id: string;
+  name: string;
+  price: number | string;
+  quantity: number;
+  extras?: ExtraItem[];
+}
 
-    // Calcular o preço total dos extras (se houver)
-    let totalExtrasPrice = 0;
-    if (item.extras) {
-      totalExtrasPrice = item.extras.reduce((acc, extra) => acc + extra.price, 0);
-    }
+export const calcularTotalCarrinho = (cart: CartItem[], desconto: number): number => {
+  return (
+    cart.reduce((total, item) => {
+      // Converter preço para número, se for string
+      let price =
+        typeof item.price === "string"
+          ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
+          : item.price;
 
-    // Calcular o total do item com seus extras, multiplicado pela quantidade
-    const totalPrice = (price + totalExtrasPrice) * item.quantity;
+      if (isNaN(price)) price = 0;
 
-    return total + totalPrice;
-  }, 0) * (1 - desconto);
+      // Calcular o preço total dos extras (se houver)
+      const totalExtrasPrice = item.extras?.reduce((acc, extra) => acc + extra.price, 0) || 0;
+
+      // Calcular o total do item com seus extras, multiplicado pela quantidade
+      const totalPrice = (price + totalExtrasPrice) * item.quantity;
+
+      return total + totalPrice;
+    }, 0) * (1 - desconto)
+  );
 };

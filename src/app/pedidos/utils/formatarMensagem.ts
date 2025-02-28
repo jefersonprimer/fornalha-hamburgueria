@@ -1,12 +1,26 @@
+interface ExtraItem {
+  name: string;
+  price: number | string;
+  quantity: number;
+}
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number | string;
+  quantity: number;
+  extras?: ExtraItem[];
+}
+
 export function formatarMensagem(
-  cart: any[],
+  cart: CartItem[],
   bairro: string,
   rua: string,
   casa: string,
   referencia: string,
   desconto: number,
   observacao: string
-) {
+): string {
   // Calculando o total com desconto
   const totalComDesconto =
     cart.reduce((total, item) => {
@@ -19,20 +33,18 @@ export function formatarMensagem(
       let itemTotal = price * item.quantity;
 
       // Adicionar o preço dos extras, se houver
-      if (item.extras && item.extras.length > 0) {
-        const extrasTotal = item.extras.reduce((extraTotal: number, extra: any) => {
-          let extraPrice =
-            typeof extra.price === "string"
-              ? parseFloat(extra.price.replace("R$", "").trim().replace(",", "."))
-              : extra.price;
+      const extrasTotal = item.extras?.reduce((extraTotal, extra) => {
+        let extraPrice =
+          typeof extra.price === "string"
+            ? parseFloat(extra.price.replace("R$", "").trim().replace(",", "."))
+            : extra.price;
 
-          if (isNaN(extraPrice)) extraPrice = 0;
-          
-          return extraTotal + extraPrice * extra.quantity; // Multiplica pela quantidade do extra
-        }, 0);
+        if (isNaN(extraPrice)) extraPrice = 0;
 
-        itemTotal += extrasTotal; // Soma o valor dos extras ao item principal
-      }
+        return extraTotal + extraPrice * extra.quantity;
+      }, 0) || 0;
+
+      itemTotal += extrasTotal;
 
       return total + itemTotal;
     }, 0) * (1 - desconto);
@@ -54,21 +66,21 @@ export function formatarMensagem(
       // Adicionar extras, se houver
       if (item.extras && item.extras.length > 0) {
         const extrasMensagem = item.extras
-          .map((extra: any) => {
+          .map((extra) => {
             let extraPrice =
               typeof extra.price === "string"
                 ? parseFloat(extra.price.replace("R$", "").trim().replace(",", "."))
                 : extra.price;
 
             if (isNaN(extraPrice)) extraPrice = 0;
-            
-            const extraTotal = extraPrice * extra.quantity; // Multiplica pelo número de vezes que o extra foi selecionado
-            
-            return `  ➕ *${extra.name}* - ${extra.quantity}x (+R$ ${extraTotal.toFixed(2)})`; // Inclui a quantidade correta
+
+            const extraTotal = extraPrice * extra.quantity;
+
+            return `  ➕ *${extra.name}* - ${extra.quantity}x (+R$ ${extraTotal.toFixed(2)})`;
           })
           .join("\n");
 
-        mensagemItem += `\n${extrasMensagem}`; // Adiciona os extras à mensagem do item
+        mensagemItem += `\n${extrasMensagem}`;
       }
 
       return mensagemItem;
