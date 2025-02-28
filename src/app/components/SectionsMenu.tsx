@@ -46,9 +46,7 @@ export default function SectionsMenu() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -93,9 +91,9 @@ export default function SectionsMenu() {
           <section key={section} id={section} className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-[#46464D]">{section.toUpperCase()}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {data[section].map((item, itemIndex) => (
+              {data[section].map((item) => (
                 <MenuItem
-                  key={itemIndex}
+                  key={item.id} // Usando item.id em vez de itemIndex
                   id={item.id}
                   name={item.name}
                   description={item.description}
@@ -109,19 +107,18 @@ export default function SectionsMenu() {
         ))}
       </div>
 
-      {/* Componente separado do modal */}
+      {/* Modal de item selecionado */}
       <SelectedItemModal
         selectedItem={selectedItem}
         quantity={quantity}
-        setQuantity={setQuantity} // Agora está sendo passado corretamente
+        setQuantity={setQuantity} // Certifique-se de não passar funções duplicadas
         selectedExtras={selectedExtras}
         setSelectedExtras={setSelectedExtras}
-        handleQuantityChange={handleQuantityChange}
+        handleQuantityChange={handleQuantityChange} // Não é necessário passar duas vezes
         closeModal={closeModal}
-        handleQuantityChange={handleQuantityChange}
       />
 
-      {/* Botão de Seta para Cima */}
+      {/* Botão para rolar para o topo */}
       {showScrollButton && (
         <button
           onClick={scrollToTop}
