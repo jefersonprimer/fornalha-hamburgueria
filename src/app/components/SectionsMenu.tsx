@@ -39,21 +39,6 @@ export default function SectionsMenu() {
     setQuantity((prevQuantity) => Math.max(1, prevQuantity + delta));
   };
 
-  const handleAddToCart = () => {
-    if (selectedItem) {
-      const formattedExtras = selectedExtras.map((extra, index) => ({
-        id: index, // ou outra lógica para ID único
-        name: extra.name,
-        price: extra.price,
-        quantity: 1, // Defina a quantidade inicial
-      }));
-  
-      addToCart({ ...selectedItem, quantity, extras: formattedExtras });
-      closeModal();
-    }
-  };
-  
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
