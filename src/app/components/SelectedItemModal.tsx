@@ -20,11 +20,13 @@ interface SelectedItemModalProps {
     extras?: Extra[];
   } | null;
   quantity: number;
+  setQuantity: React.Dispatch<React.SetStateAction<number>>; // Adicionado
   handleQuantityChange: (delta: number) => void;
   selectedExtras: Extra[];
   setSelectedExtras: (extras: Extra[]) => void;
   closeModal: () => void;
 }
+
 
 export default function SelectedItemModal({
   selectedItem,

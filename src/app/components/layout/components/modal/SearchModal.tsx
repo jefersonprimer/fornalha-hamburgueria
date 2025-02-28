@@ -32,10 +32,11 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
         inputRef.current?.focus();
       }, 100);
     } else {
-      handleSearch("");
+      handleSearch(""); // Certifique-se de que handleSearch não está mudando desnecessariamente
       setSelectedItem(null);
     }
-  }, [isOpen]);
+  }, [isOpen, handleSearch]); // handleSearch foi adicionado aqui
+  
 
   if (!isOpen) return null;
 

@@ -8,7 +8,7 @@ import SelectedItemModal from "./SelectedItemModal";
 
 interface MenuItemType {
   id: number;
-  isDestaque: boolean;
+  isDestaque?: boolean;
   name: string;
   description: string;
   price: number;
@@ -21,7 +21,7 @@ interface MenuData {
 }
 
 export default function SectionsMenu() {
-  const [data] = useState<MenuData>(menuData);
+  const [data] = useState<MenuData>(menuData as MenuData);
   const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedExtras, setSelectedExtras] = useState<{ name: string; price: number }[]>([]);
@@ -41,10 +41,18 @@ export default function SectionsMenu() {
 
   const handleAddToCart = () => {
     if (selectedItem) {
-      addToCart({ ...selectedItem, quantity, extras: selectedExtras });
+      const formattedExtras = selectedExtras.map((extra, index) => ({
+        id: index, // ou outra lógica para ID único
+        name: extra.name,
+        price: extra.price,
+        quantity: 1, // Defina a quantidade inicial
+      }));
+  
+      addToCart({ ...selectedItem, quantity, extras: formattedExtras });
       closeModal();
     }
   };
+  
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -116,13 +124,13 @@ export default function SectionsMenu() {
       <SelectedItemModal
         selectedItem={selectedItem}
         quantity={quantity}
-        setQuantity={setQuantity}
+        setQuantity={setQuantity} // Agora está sendo passado corretamente
         selectedExtras={selectedExtras}
         setSelectedExtras={setSelectedExtras}
         handleQuantityChange={handleQuantityChange}
-        handleAddToCart={handleAddToCart}
         closeModal={closeModal}
       />
+
 
       {/* Botão de Seta para Cima */}
       {showScrollButton && (
