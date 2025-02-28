@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import MenuItem from "./MenuItem";
 import menuData from "../../data/menuData.json";
 import SelectedItemModal from "./SelectedItemModal";
-import Image from "next/image";
 
 interface Extra {
   id: number;
