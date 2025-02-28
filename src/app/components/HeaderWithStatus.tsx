@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 
 const CityModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
