@@ -25,6 +25,7 @@ interface SelectedItemModalProps {
   selectedExtras: Extra[];
   setSelectedExtras: (extras: Extra[]) => void;
   closeModal: () => void;
+  handleQuantityChange: (delta: number) => void; // Added here
 }
 
 // Função para gerar um ID único para extras, caso necessário
@@ -59,8 +60,12 @@ export default function SelectedItemModal({
 
   // Função para garantir que a quantidade não seja negativa
   const handleQuantityChangeWithValidation = (delta: number) => {
-    setQuantity((prev) => Math.max(1, prev + delta)); // Impede quantidade negativa
+    if (handleQuantityChange) { // Adicionando verificação para garantir que a função existe
+      handleQuantityChange(delta); // Usando a prop aqui
+    }
+    setQuantity((prev) => Math.max(1, prev + delta)); // Garantindo que a quantidade não fique negativa
   };
+  
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">

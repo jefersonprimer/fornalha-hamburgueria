@@ -118,6 +118,7 @@ export default function SectionsMenu() {
         setSelectedExtras={setSelectedExtras}
         handleQuantityChange={handleQuantityChange}
         closeModal={closeModal}
+        handleQuantityChange={handleQuantityChange}
       />
 
       {/* Botão de Seta para Cima */}
