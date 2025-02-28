@@ -1,10 +1,16 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import MenuItem from "./MenuItem";
 import menuData from "../../data/menuData.json";
-import { useCart } from "../context/CartContext";
 import SelectedItemModal from "./SelectedItemModal";
+import Image from "next/image";
+
+interface Extra {
+  id: number;
+  name: string;
+  price: number;
+}
 
 interface MenuItemType {
   id: number;
@@ -13,7 +19,7 @@ interface MenuItemType {
   description: string;
   price: number;
   imageSrc: string;
-  extras?: { name: string; price: number }[];
+  extras?: Extra[];
 }
 
 interface MenuData {
@@ -24,7 +30,7 @@ export default function SectionsMenu() {
   const [data] = useState<MenuData>(menuData as MenuData);
   const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [selectedExtras, setSelectedExtras] = useState<{ name: string; price: number }[]>([]);
+  const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   const openModal = (item: MenuItemType) => setSelectedItem(item);
@@ -114,7 +120,6 @@ export default function SectionsMenu() {
         handleQuantityChange={handleQuantityChange}
         closeModal={closeModal}
       />
-
 
       {/* Botão de Seta para Cima */}
       {showScrollButton && (

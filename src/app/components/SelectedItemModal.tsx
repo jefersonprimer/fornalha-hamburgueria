@@ -5,6 +5,7 @@ import { useCart } from "../context/CartContext";
 import ExtrasDropdown from "./ExtrasDropdown";
 
 interface Extra {
+  id: number;
   name: string;
   price: number;
   quantity?: number;
@@ -20,18 +21,19 @@ interface SelectedItemModalProps {
     extras?: Extra[];
   } | null;
   quantity: number;
-  setQuantity: React.Dispatch<React.SetStateAction<number>>; // Adicionado
-  handleQuantityChange: (delta: number) => void;
+  setQuantity: React.Dispatch<React.SetStateAction<number>>;
   selectedExtras: Extra[];
   setSelectedExtras: (extras: Extra[]) => void;
   closeModal: () => void;
 }
 
+// Função para gerar um ID único para extras, caso necessário
+const generateUniqueId = () => Math.floor(Math.random() * 1000000);
 
 export default function SelectedItemModal({
   selectedItem,
   quantity,
-  handleQuantityChange,
+  setQuantity,
   selectedExtras,
   setSelectedExtras,
   closeModal,
@@ -40,15 +42,24 @@ export default function SelectedItemModal({
 
   if (!selectedItem) return null;
 
+  // Garantir que os extras tenham um ID único
   const handleAddToCart = () => {
     addToCart({
       id: selectedItem.id,
       name: selectedItem.name,
       price: selectedItem.price,
       quantity,
-      extras: selectedExtras,
+      extras: selectedExtras.map(extra => ({
+        ...extra,
+        id: extra.id || generateUniqueId(), // Garantindo que cada extra tenha um id
+      })),
     });
     closeModal();
+  };
+
+  // Função para garantir que a quantidade não seja negativa
+  const handleQuantityChangeWithValidation = (delta: number) => {
+    setQuantity((prev) => Math.max(1, prev + delta)); // Impede quantidade negativa
   };
 
   return (
@@ -57,12 +68,13 @@ export default function SelectedItemModal({
         <h1 className="font-semibold text-[#46464D] uppercase">{selectedItem.name}</h1>
         <p className="text-[#46464D] mb-2 w-[350px] text-[16px]">{selectedItem.description}</p>
 
-        {/* Correção do uso de <img> para <Image /> */}
+        {/* Correção do uso de <img> para <Image /> com largura e altura fixas */}
         <div className="relative w-[300px] h-[200px] mx-auto">
           <Image
             src={selectedItem.imageSrc}
             alt={selectedItem.name}
-            layout="fill"
+            width={300}
+            height={200}
             objectFit="cover"
             className="rounded-md"
           />
@@ -79,13 +91,13 @@ export default function SelectedItemModal({
           </svg>
         </button>
 
-        {/* Controle de quantidade */}
+        {/* Controle de quantidade com validação */}
         <div className="flex items-center mt-4">
-          <button onClick={() => handleQuantityChange(-1)} className="p-2 bg-gray-200 rounded-lg">
+          <button onClick={() => handleQuantityChangeWithValidation(-1)} className="p-2 bg-gray-200 rounded-lg">
             <FaMinus />
           </button>
           <span className="mx-4">{quantity}</span>
-          <button onClick={() => handleQuantityChange(1)} className="p-2 bg-gray-200 rounded-lg">
+          <button onClick={() => handleQuantityChangeWithValidation(1)} className="p-2 bg-gray-200 rounded-lg">
             <FaPlus />
           </button>
         </div>
