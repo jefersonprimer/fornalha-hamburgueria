@@ -8,7 +8,7 @@ interface Extra {
   id: number;
   name: string;
   price: number;
-  quantity?: number;
+  quantity?: number; // Torna a propriedade opcional
 }
 
 interface SelectedItemModalProps {
@@ -25,7 +25,7 @@ interface SelectedItemModalProps {
   selectedExtras: Extra[];
   setSelectedExtras: (extras: Extra[]) => void;
   closeModal: () => void;
-  handleQuantityChange: (delta: number) => void; // Added here
+  handleQuantityChange: (delta: number) => void;
 }
 
 // Função para gerar um ID único para extras, caso necessário
@@ -38,6 +38,7 @@ export default function SelectedItemModal({
   selectedExtras,
   setSelectedExtras,
   closeModal,
+  handleQuantityChange,
 }: SelectedItemModalProps) {
   const { addToCart } = useCart();
 
@@ -65,7 +66,6 @@ export default function SelectedItemModal({
     }
     setQuantity((prev) => Math.max(1, prev + delta)); // Garantindo que a quantidade não fique negativa
   };
-  
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
