@@ -25,7 +25,6 @@ export default function SectionsMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedExtras, setSelectedExtras] = useState<{ name: string; price: number }[]>([]);
-  const { addToCart } = useCart();
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   const openModal = (item: MenuItemType) => setSelectedItem(item);
