@@ -3,20 +3,51 @@ import useSearch from "../../hooks/useSearch"; // Importe o hook
 import MenuItem from "../../../MenuItem";
 import SelectedItemModal from "../../../SelectedItemModal";
 
+import { MenuItemType } from "@/types/MenuItemType";
+import { Extra } from "@/types/Extras";
+
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
-  searchTerm: string;  // Add this line
-  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Add this line
-  filteredItems: any[];  // Add this line
+  searchTerm: string;
+  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  filteredItems: MenuItemType[]; // Agora tipado como MenuItemType[]
 }
 
-const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
-  const { searchTerm, filteredItems, handleSearch } = useSearch(); // Use o hook
-  const [selectedItem, setSelectedItem] = useState<any | null>(null);
-  const [quantity, setQuantity] = useState(1);
-  const [selectedExtras, setSelectedExtras] = useState<any[]>([]);
+const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchTerm, filteredItems, onSearchChange }) => {
+  const { handleSearch } = useSearch();
+  const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null); // Usando o tipo MenuItemType
+  const [quantity, setQuantity] = useState<number>(1);
+  const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]); // Defina o tipo para Extras (ou qualquer tipo adequado)
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Função para adicionar o item ao carrinho
+  const handleAddToCart = () => {
+    if (selectedItem) {
+      console.log("Item adicionado ao carrinho", {
+        id: selectedItem.id,
+        name: selectedItem.name,
+        price: selectedItem.price,
+        quantity,
+        extras: selectedExtras,
+        description: selectedItem.description,
+        imageSrc: selectedItem.imageSrc,
+      });
+    }
+    setSelectedItem(null); // Fecha o modal após adicionar
+  };
+
+  // Função para lidar com a seleção de extras
+  const handleSelectExtra = (extra: Extra) => {
+    setSelectedExtras((prev) => {
+      // Verifica se o extra já foi selecionado
+      if (prev.some((e) => e.id === extra.id)) {
+        return prev.filter((e) => e.id !== extra.id); // Remove se já selecionado
+      } else {
+        return [...prev, extra]; // Adiciona se não estiver selecionado
+      }
+    });
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -27,7 +58,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
       handleSearch(""); // Limpa a busca ao fechar o modal
       setSelectedItem(null);
     }
-  }, [isOpen]);
+  }, [isOpen, handleSearch]);
 
   if (!isOpen) return null;
 
@@ -58,7 +89,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
             ref={inputRef}
             type="text"
             value={searchTerm}
-            onChange={(e) => handleSearch(e.target.value)}
+            onChange={onSearchChange} // Passando a função para lidar com a busca
             placeholder="Buscar..."
             className="w-full pl-10 pr-20 p-2 border border-gray-300 rounded"
           />
@@ -84,9 +115,9 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
 
         <div className="h-[88%] max-h-[800px] overflow-y-auto">
           {filteredItems.length > 0 ? (
-            filteredItems.map((item, index) => (
+            filteredItems.map((item) => (
               <MenuItem
-                key={`${item.id}-${index}`}
+                key={item.id}
                 id={item.id}
                 name={item.name}
                 description={item.description}
@@ -111,6 +142,8 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
               setQuantity((prev) => Math.max(1, prev + delta))
             }
             closeModal={() => setSelectedItem(null)}
+            handleAddToCart={handleAddToCart} // Passando a função handleAddToCart
+            handleSelectExtra={handleSelectExtra} // Passando a função handleSelectExtra
           />
         )}
       </div>

@@ -1,21 +1,22 @@
-export const calcularTotalCarrinho = (cart: any[], desconto: number) => {
-  return cart.reduce((total, item) => {
-    // Calcular o preço do item principal
-    let price =
-      typeof item.price === "string"
-        ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
-        : item.price;
+import { MenuItemType } from "@/types/MenuItemType";
 
-    if (isNaN(price)) price = 0;
+export const calcularTotalCarrinho = (cart: MenuItemType[], desconto: number): number => {
+  if (desconto < 0 || desconto > 1) {
+    throw new Error("Desconto deve ser um valor entre 0 e 1.");
+  }
+
+  return cart.reduce((total, item) => {
+    // Agora price é garantido como número
+    const price = item.price;
+
+    // Se price não for um número válido, definimos como 0
+    const validPrice = isNaN(price) ? 0 : price;
 
     // Calcular o preço total dos extras (se houver)
-    let totalExtrasPrice = 0;
-    if (item.extras) {
-      totalExtrasPrice = item.extras.reduce((acc, extra) => acc + extra.price, 0);
-    }
+    const totalExtrasPrice = item.extras?.reduce((acc, extra) => acc + extra.price, 0) || 0;
 
-    // Calcular o total do item com seus extras, multiplicado pela quantidade
-    const totalPrice = (price + totalExtrasPrice) * item.quantity;
+    // Calcular o total com extras e quantidade
+    const totalPrice = (validPrice + totalExtrasPrice) * item.quantity;
 
     return total + totalPrice;
   }, 0) * (1 - desconto);

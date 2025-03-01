@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { FaChevronDown, FaMinus, FaPlus } from "react-icons/fa";
-
-interface Extra {
-  name: string;
-  price: number;
-  quantity?: number; // Adicionando quantidade ao tipo Extra
-}
+import { Extra } from "@/types/Extras";
 
 interface ExtrasDropdownProps {
   extras: Extra[];
   selectedExtras: Extra[];
   setSelectedExtras: (extras: Extra[]) => void;
+  handleSelectExtra: (extra: Extra) => void; // Adicionando handleSelectExtra na interface
 }
 
-export default function ExtrasDropdown({ extras, selectedExtras, setSelectedExtras }: ExtrasDropdownProps) {
+export default function ExtrasDropdown({
+  extras,
+  selectedExtras,
+  setSelectedExtras,
+  handleSelectExtra, // Recebendo a função como prop
+}: ExtrasDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Função para atualizar a quantidade de extras
   const handleExtraQuantityChange = (extra: Extra, delta: number) => {
     const existingExtra = selectedExtras.find((e) => e.name === extra.name);
 
@@ -23,15 +25,19 @@ export default function ExtrasDropdown({ extras, selectedExtras, setSelectedExtr
       const updatedExtras = selectedExtras
         .map((e) =>
           e.name === extra.name
-            ? { ...e, quantity: Math.max(1, (e.quantity || 1) + delta) }
+            ? { ...e, quantity: Math.max(1, (e.quantity || 1) + delta) } // Garante que a quantidade não vá para 0 ou negativa
             : e
         )
-        .filter((e) => e.quantity! > 0); // Remove se a quantidade for 0
+        .filter((e) => e.quantity > 0); // Remove extras com quantidade 0 ou negativa
 
       setSelectedExtras(updatedExtras);
     } else if (delta > 0) {
+      // Adiciona o extra caso não exista ainda
       setSelectedExtras([...selectedExtras, { ...extra, quantity: 1 }]);
     }
+
+    // Chamando a função handleSelectExtra após a mudança na quantidade
+    handleSelectExtra(extra);
   };
 
   return (
@@ -45,12 +51,13 @@ export default function ExtrasDropdown({ extras, selectedExtras, setSelectedExtr
 
       {isOpen && (
         <div className="mt-2 border p-2 bg-gray-100">
-          {extras.map((extra, index) => {
+          {extras.map((extra) => {
+            // Encontra o extra selecionado, se existir
             const selectedExtra = selectedExtras.find((e) => e.name === extra.name);
             const quantity = selectedExtra?.quantity || 0;
 
             return (
-              <div key={index} className="flex justify-between items-center py-1">
+              <div key={extra.name} className="flex justify-between items-center py-1">
                 <span>{extra.name} (+ R$ {extra.price.toFixed(2)})</span>
                 <div className="flex items-center">
                   <button

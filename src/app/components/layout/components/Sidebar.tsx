@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import HoursModal from "./modal/SideBarHoursModal"; // Importando o modal de Horários
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HoursModal from "./modal/SideBarHoursModal";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -62,8 +62,14 @@ export default function Sidebar({ isOpen, onClose, openModal }: SidebarProps) {
         </nav>
 
         <Link href="/">
-          <img src="/logo-removebg-preview.png" alt="logo" className="w-40 mx-auto md:mx-0 mt-12" />
-        </Link>
+        <Image
+          src="/logo-removebg-preview.png"
+          alt="logo"
+          width={160} // Ajuste conforme necessário
+          height={100} // Ajuste conforme necessário
+          className="w-40 mx-auto md:mx-0 mt-12"
+        />
+      </Link>
       </aside>
 
       {/* Modal de Horários */}

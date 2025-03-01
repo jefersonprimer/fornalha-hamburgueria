@@ -1,6 +1,8 @@
 "use client";
 
+
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const CityModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
@@ -21,10 +23,12 @@ const CityModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
     {/* Layout responsivo - Imagem acima no mobile, ao lado no desktop */}
     <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-      <img
-        src="https://files.menudino.com/cardapios/63227/logo.png"
+      <Image
+        src="/old-logo.png"
         alt="Logo"
-        className="w-[120px] h-[120px] rounded-md"
+        width={120}
+        height={120}
+        className="rounded-md"
       />
 
       <div className="text-sm text-black">
@@ -88,10 +92,12 @@ const HeaderWithStatus: React.FC = () => {
   return (
     <div className="flex justify-between items-center p-4 bg-[#FFF] text-black">
       <div className="flex flex-col sm:flex-row items-center sm:items-end text-center sm:text-left gap-4">
-        <img
-          src="https://files.menudino.com/cardapios/63227/logo.png"
+      <Image
+          src="/old-logo.png"
           alt="Logo"
-          className="w-[160px] h-[160px] rounded-md z-20"
+          width={160}
+          height={160}
+          className="rounded-md z-20"
         />
         <div>
         <h1 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl cursor-pointer text-[#1F2937]">

@@ -1,30 +1,19 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import MenuItem from "./MenuItem";
 import menuData from "../../data/menuData.json";
 import { useCart } from "../context/CartContext";
 import SelectedItemModal from "./SelectedItemModal";
-
-interface MenuItemType {
-  id: number;
-  isDestaque: boolean;
-  name: string;
-  description: string;
-  price: number;
-  imageSrc: string;
-  extras?: { name: string; price: number }[];
-}
-
-interface MenuData {
-  [key: string]: MenuItemType[];
-}
+import { MenuItemType } from "@/types/MenuItemType";
+import { Extra } from "@/types/Extras";
+import { MenuData } from "@/types/menuTypes"; // Certifique-se de importar corretamente o MenuData
 
 export default function SectionsMenu() {
-  const [data] = useState<MenuData>(menuData);
+  const [data] = useState<MenuData>(menuData);  // Aqui está o tipo correto
   const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [selectedExtras, setSelectedExtras] = useState<{ name: string; price: number }[]>([]);
+  const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
   const { addToCart } = useCart();
   const [showScrollButton, setShowScrollButton] = useState(false);
 
@@ -39,9 +28,30 @@ export default function SectionsMenu() {
     setQuantity((prevQuantity) => Math.max(1, prevQuantity + delta));
   };
 
+  const handleSelectExtra = (extra: { id: number; name: string; price: number }) => {
+    setSelectedExtras((prevExtras) => {
+      const existingExtra = prevExtras.find((e) => e.id === extra.id);
+      if (existingExtra) {
+        return prevExtras.map((e) =>
+          e.id === extra.id ? { ...e, quantity: e.quantity + 1 } : e
+        );
+      }
+      return [...prevExtras, { ...extra, quantity: 1 }];
+    });
+  };
+
   const handleAddToCart = () => {
     if (selectedItem) {
-      addToCart({ ...selectedItem, quantity, extras: selectedExtras });
+      addToCart({
+        ...selectedItem,
+        quantity,
+        extras: selectedExtras.map((extra) => ({
+          id: extra.id,
+          name: extra.name,
+          price: extra.price,
+          quantity: extra.quantity ?? 1,
+        })),
+      });
       closeModal();
     }
   };
@@ -55,21 +65,15 @@ export default function SectionsMenu() {
     }
   };
 
-  // Função para monitorar o scroll e exibir o botão
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) { // Exibir o botão após rolar 300px para baixo
-        setShowScrollButton(true);
-      } else {
-        setShowScrollButton(false);
-      }
+      setShowScrollButton(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Função para rolar para o topo
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -96,9 +100,9 @@ export default function SectionsMenu() {
           <section key={section} id={section} className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-[#46464D]">{section.toUpperCase()}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {data[section].map((item, itemIndex) => (
+              {data[section].map((item) => (
                 <MenuItem
-                  key={itemIndex}
+                  key={item.id}
                   id={item.id}
                   name={item.name}
                   description={item.description}
@@ -112,9 +116,8 @@ export default function SectionsMenu() {
         ))}
       </div>
 
-      {/* Componente separado do modal */}
       <SelectedItemModal
-        selectedItem={selectedItem}
+        selectedItem={selectedItem ? { ...selectedItem, extras: selectedItem.extras ?? [] } : null}
         quantity={quantity}
         setQuantity={setQuantity}
         selectedExtras={selectedExtras}
@@ -122,9 +125,10 @@ export default function SectionsMenu() {
         handleQuantityChange={handleQuantityChange}
         handleAddToCart={handleAddToCart}
         closeModal={closeModal}
+        handleSelectExtra={handleSelectExtra} // Passando a função
       />
 
-      {/* Botão de Seta para Cima */}
+
       {showScrollButton && (
         <button
           onClick={scrollToTop}

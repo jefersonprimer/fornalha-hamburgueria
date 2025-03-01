@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from "next/image";
+
 import React from 'react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
@@ -11,7 +13,13 @@ const Footer: React.FC = () => {
           {/* Logo */}
           <div className="text-center md:text-left">
             <Link href="/">
-              <img src="/logo-removebg-preview.png" alt="logo" className="w-40 mx-auto md:mx-0" />
+            <Image 
+              src="/logo-removebg-preview.png" 
+              alt="logo" 
+              width={160} 
+              height={160} 
+              className="w-40 mx-auto md:mx-0"
+            />
             </Link>
           </div>
 

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import Link from "next/link";
@@ -9,10 +9,12 @@ import HoursModal from "./components/modal/HoursModal";
 import menuData from "../../../data/menuData.json";
 import Sidebar from "./components/Sidebar";
 
+import { MenuItemType } from "@/types/MenuItemType"
+
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<MenuItemType[]>([]); // Usando MenuItemType
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isHoursModalVisible, setIsHoursModalVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,13 +25,6 @@ export default function Header() {
     setIsModalOpen(true);
     setIsSidebarOpen(false);
   };
-
-
-  // Função para abrir o modal de cupons
-  // const openModal = (e: React.MouseEvent) => {
-  //   e.preventDefault();
-  //   setIsModalOpen(true);
-  // };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -49,7 +44,7 @@ export default function Header() {
 
     const result = Object.values(menuData)
       .flat()
-      .filter((item: any) =>
+      .filter((item: MenuItemType) =>
         item.name.toLowerCase().includes(query) ||
         item.description.toLowerCase().includes(query)
       );
@@ -79,18 +74,17 @@ export default function Header() {
 
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} openModal={openModal} />
       
-
       {/* Barra de Pesquisa */}
       <div className="relative">
-      <input
-        type="text"
-        placeholder="Buscar..."
-        value={searchTerm}
-        onChange={handleSearch}
-        onFocus={openSearchModal} // Abre o modal ao clicar no input
-        className="pl-8 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#F80305] text-black
-        hidden sm:w-32 md:w-48 lg:w-64 xl:w-80  sm:block"
-      />
+        <input
+          type="text"
+          placeholder="Buscar..."
+          value={searchTerm}
+          onChange={handleSearch}
+          onFocus={openSearchModal} // Abre o modal ao clicar no input
+          className="pl-8 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#F80305] text-black
+          hidden sm:w-32 md:w-48 lg:w-64 xl:w-80  sm:block"
+        />
 
         <svg
           className="absolute right-2 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white sm:text-black sm:block cursor-pointer"
@@ -129,7 +123,6 @@ export default function Header() {
           id="header-menu"
           className="mdl-button mdl-js-button header-button header-signin js-header-signin border-r-10 flex items-center"
         >
-          
           <span className="text-white hover:text-[#F80305] lg:block hidden">
             Entre ou Cadastre-se
           </span>

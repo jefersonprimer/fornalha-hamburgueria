@@ -1,5 +1,8 @@
+import { Extra } from "@/types/Extras";
+import { MenuItemType } from "@/types/MenuItemType";
+
 export function formatarMensagem(
-  cart: any[],
+  cart: MenuItemType[],  // Usar CartItem em vez de any[]
   bairro: string,
   rua: string,
   casa: string,
@@ -10,21 +13,15 @@ export function formatarMensagem(
   // Calculando o total com desconto
   const totalComDesconto =
     cart.reduce((total, item) => {
-      let price =
-        typeof item.price === "string"
-          ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
-          : item.price;
+      let price = item.price; // Garantir que price é um number
 
       if (isNaN(price)) price = 0;
       let itemTotal = price * item.quantity;
 
       // Adicionar o preço dos extras, se houver
       if (item.extras && item.extras.length > 0) {
-        const extrasTotal = item.extras.reduce((extraTotal: number, extra: any) => {
-          let extraPrice =
-            typeof extra.price === "string"
-              ? parseFloat(extra.price.replace("R$", "").trim().replace(",", "."))
-              : extra.price;
+        const extrasTotal = item.extras.reduce((extraTotal: number, extra: Extra) => {
+          let extraPrice = extra.price; // Garantir que extraPrice é um number
 
           if (isNaN(extraPrice)) extraPrice = 0;
           
@@ -40,10 +37,7 @@ export function formatarMensagem(
   // Montando a mensagem dos itens
   const itensPedido = cart
     .map((item) => {
-      let price =
-        typeof item.price === "string"
-          ? parseFloat(item.price.replace("R$", "").trim().replace(",", "."))
-          : item.price;
+      let price = item.price; // Garantir que price é um number
 
       if (isNaN(price)) price = 0;
       const totalPrice = price * item.quantity;
@@ -54,11 +48,8 @@ export function formatarMensagem(
       // Adicionar extras, se houver
       if (item.extras && item.extras.length > 0) {
         const extrasMensagem = item.extras
-          .map((extra: any) => {
-            let extraPrice =
-              typeof extra.price === "string"
-                ? parseFloat(extra.price.replace("R$", "").trim().replace(",", "."))
-                : extra.price;
+          .map((extra: Extra) => {
+            let extraPrice = extra.price; // Garantir que extraPrice é um number
 
             if (isNaN(extraPrice)) extraPrice = 0;
             

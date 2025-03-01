@@ -1,14 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
-
-// Definição do tipo Extra com quantidade
-interface Extra {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number; // Agora os extras possuem quantidade
-}
+import { Extra } from "@/types/Extras";
 
 // Definição do tipo CartItem com lista de extras
 interface CartItem {
@@ -23,7 +16,7 @@ interface CartItem {
 
 // Interface para o contexto do carrinho
 interface CartContextType {
-  cart: CartItem[];
+  cart: CartItem[];  // Aqui usamos CartItem[] em vez de MenuItemType[]
   addToCart: (item: CartItem) => void;
   updateCart: (id: number, quantityChange: number, updatedExtras?: { id: number; quantity: number }[]) => void;
   removeFromCart: (id: number) => void;
@@ -57,7 +50,7 @@ const mergeExtras = (existingExtras: Extra[] = [], newExtras: Extra[] = []) => {
 
 // Provider do carrinho
 export function CartProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);  // Tipando corretamente o cart como CartItem[]
 
   // Adicionar item ao carrinho (considerando os extras)
   const addToCart = (item: CartItem) => {
