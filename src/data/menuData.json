@@ -2,83 +2,81 @@
     "porcoes": [
       {
         "id": 1,
-        "name": "Aneis de Cebola com Calabresa",
+        "name": "ANEIS DE CEBOLA COM CALABRESA",
         "description": "250G Aneis de cebola 250G calabresa com cebola refogada",
-        "price": 14.90,
+        "price": 10.90,
         "imageSrc": "/aneis-de-cebola.jpg",
         "quantity": 0,
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 }
         ]
       },
       {
         "id": 2, 
         "name": "BATATA COM CHEDDAR E BACONN",
         "description": "400g de batatinhas crocrantes cobertas com um delicioso cheddar cremoso e bacon.",
-        "price": 19.90,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "price": 9.90,
+        "imageSrc": "/batata-com-cheddar-e-bacon.jpg",
         "quantity": 0,
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Calabresa", "price": 2.50,"quantity": 0 },
+          { "id": 3,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Cestinha Cebola 100g", "price": 8.00, "quantity": 0 },
+          { "id": 5,"name": "Molho Picante Alabama", "price": 1.50, "quantity": 0 }
         ]
       },
       {
         "id": 3,
         "name": "BIG NUGUETTS",
         "description": "PORÇÃO DE 400 G.",
-        "price": 19.90,
+        "price": 6.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/big-nuguetts.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 }
         ]
       },
       {
         "id": 4, 
         "name": "BOLINHO DE CAMARAO",
         "description": "PORÇÃO 400 GRAMAS.",
-        "price": 19.90,
+        "price": 9.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/BOLINHO-DE-CAMARAO.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 }
         ]
       },
       {
         "id": 5, 
         "name": "BOLINHO DE PROVOLONE",
         "description": "PORÇÃO 400 GRAMAS.",
-        "price": 19.90,
+        "price": 9.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/BOLINHO-DE-PROVOLONE.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 }
         ]
       },
       {
         "id": 6, 
         "name": "CAMARÃO A MILANESA",
         "description": "400 G CAMARÃO PREMIUM, 200G ANEIS DE CEBOLA,200G BATATA FRITA, MOLHO TARTARO",
-        "price": 19.90,
+        "price": 12.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/CAMARAO-A-MILANESA.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 }
         ]
       },
       {
         "id": 7, 
         "name": "COSTELINHA DE PORCO",
         "description": "400G DE COSTELINHA DE PORCO 200G DE MANDIOCA 200G DE BATATA FRITA MAIONESE ARTESANAL",
-        "price": 19.90,
+        "price": 39.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/COSTELINHA-DE-PORCO.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -86,11 +84,11 @@
       },
       {
         "id": 8, 
-        "name": "coxinha de linguiça defumada",
+        "name": "COXINHA DE LINGUIÇA DEFUMADA",
         "description": "400G",
-        "price": 19.90,
+        "price": 6.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/coxinha-de-linguiça-defumada.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -100,21 +98,20 @@
         "id": 9, 
         "name": "FRANGO A PASSARINHO",
         "description": "400 G FRANGO, 200 G POLENTA FRITA, 200 G BATATA FRITA",
-        "price": 19.90,
+        "price": 29.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/FRANGO-A-PASSARINHO.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 }
         ]
       },
       {
         "id": 10, 
         "name": "PALITO EMPANADO 2 UNIDADES",
         "description": "",
-        "price": 19.90,
+        "price": 4.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/PALITO-EMPANADO-2-UNIDADES.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -124,12 +121,12 @@
         "id": 11, 
         "name": "PICANHA NA PEDRA",
         "description": "400 G DE TIRAS DE PICANHA, 200 GRAMAS DE BATATA FRITA,200G MANDIOCA FRITA, 200 GRAMA DE QUEIJO EMPANADO,PÃO TORRADO, FAROFA E MOLHO ESPECIAL.",
-        "price": 19.90,
+        "price": 59.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/PICANHA-NA-PEDRA.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
         ]
       },
       {
@@ -138,10 +135,188 @@
         "description": "300 G QUEIJO EMPANADO 300G BATATA COM CHEDDAR E BACON",
         "price": 19.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/QUEIJO-EMPANADO.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 }
+        ]
+      },
+      {
+        "id": 13, 
+        "name": "TABUA DE FRIOS",
+        "description": "Queijos: Gouda (150g), Provolone (150g), Parmesão em lascas (100g), Brie (100g) | Embutidos: Salame Italiano (150g), Presunto Parma (100g), Copa (100g) | Pães e torradas: Torradas ou pão italiano (200g) | Frutas e acompanhamentos: Uvas (150g), Damasco seco (100g), Castanha-do-pará (100g), Azeitonas verdes ou pretas (100g), Mel ou geleia (50g)",
+        "price": 69.90,
+        "quantity": 0,
+        "imageSrc": "/TABUA-DE-FRIOS.avif",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Queijo Brie 300g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Queijo Parmesão 300g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Queijo Gorgonzola 300g", "price": 6.00, "quantity": 0 },
+          { "id": 5,"name": "Presunto de Parma 300g", "price": 6.00, "quantity": 0 },
+          { "id": 6,"name": "Salame Italiano 300g", "price": 6.00, "quantity": 0 },
+          { "id": 7,"name": "Pão Italiano 300g", "price": 6.00, "quantity": 0 },
+          { "id": 8,"name": "Torradas 300g", "price": 6.00, "quantity": 0 },
+          { "id": 9,"name": "Uvas, Morangos 300g", "price": 6.00, "quantity": 0 },
+          { "id": 10,"name": "Azeitonas Verdes e Pretas 300g", "price": 6.00, "quantity": 0 },
+          { "id": 11,"name": "Vinho 300Ml", "price": 12.00, "quantity": 0 }
+        ]
+      },
+      {
+        "id": 14, 
+        "name": "BATATA FRITA TRADICIONAL",
+        "description": "PORÇÃO DE 400 GRAMAS",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/batata-frita-tradicional.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 5,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 15, 
+        "name": "BOLINHO DE BACALHAU",
+        "description": "PORÇÃO DE 400 GRAMAS",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/Bolinho-bacalhau.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 5,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 16, 
+        "name": "BOLINHO DE CARNE SECA",
+        "description": "PORÇÃO DE 400 GRAMAS",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/BOLINHO-DE-CARNE-SECA.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 5,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 17, 
+        "name": "BOLINHO DE SIRI",
+        "description": "PORÇÃO DE 400 GRAMAS",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/BOLINHO-DE-SIRI.webp",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 5,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 18, 
+        "name": "COSTELINHA DE CARNE SUÍNA",
+        "description": "400g carne suina 200g de mandioca 200 batata",
+        "price": 39.90,
+        "quantity": 0,
+        "imageSrc": "/COSTELINHA-DE-CARNE-SUÍNA.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 5,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 19, 
+        "name": "COXINHA DE FRANGO COM REQUEIJÃO",
+        "description": "400g",
+        "price": 5.90,
+        "quantity": 0,
+        "imageSrc": "/coxinha-de-frango-com-requeijao.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 5,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 20, 
+        "name": "FILÉ DE TILÁPIA",
+        "description": "400 GRAMAS DE TILAPIA, 200 GRAMAS DE BATATA FRITA,200 GRAMAS DE MANDIOCA, 200 GRAMAS DE POLENTA. ACOMPANHA MOLHO ESPECIAL E MAIONESE ARTESANAL",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/FILE-DE-TILAPIA.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Cestinha Mandioca Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Cestinha Polenta Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 5,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 6,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 7,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 21, 
+        "name": "MINI SALGADOS",
+        "description": "PORÇÃO DE 24 UNIDADES E SABORES SORTIDOS",
+        "price": 34.90,
+        "quantity": 0,
+        "imageSrc": "/MINI-SALGADOS.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Cestinha Mandioca Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Cestinha Polenta Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 5,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 6,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 7,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 22, 
+        "name": "PORÇÃO TABUA ESPEICAL FORNALHA",
+        "description": "200G CARNE(COXAO MOLE) 200G FRANGO A MILANESA 200G QUEIJO EMPANADO 200G CALABRESSA 200G BATATA FRITA",
+        "price": 59.90,
+        "quantity": 0,
+        "imageSrc": "/PORCAO-TABUA-ESPEICAL-FORNALHA.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Cestinha Mandioca Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Cestinha Polenta Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 5,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 6,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 7,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 23, 
+        "name": "TABUA DE CARNES",
+        "description": "400 G Filé Mignon na brasa, cebola refogada no shoyo, pão de alho, 200G batata frita.",
+        "price": 49.90,
+        "quantity": 0,
+        "imageSrc": "/TABUA-DE-CARNES.jpg",
+        "extras": [
+          { "id": 1,"name": "Cestinha Batata 100g", "price": 6.00, "quantity": 0 },
+          { "id": 2,"name": "Cestinha Mandioca Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 3,"name": "Cestinha Polenta Frita 100g", "price": 6.00, "quantity": 0 },
+          { "id": 4,"name": "Maionese da Casa 100g", "price": 6.00, "quantity": 0 },
+          { "id": 5,"name": "Ketchup 100g", "price": 6.00, "quantity": 0 },
+          { "id": 6,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          { "id": 7,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
         ]
       }
     ],
@@ -150,59 +325,830 @@
         "id": 1, 
         "name": "BRASA KIDS",
         "description": "Pão Italiano, hamburguer bovino,queijo mussarela. ACOMPANHA BATATA FRITA, SUCO KAPO E BRIQUEDO SURPRESA",
-        "price": 19.90,
+        "price": 29.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/brasa-kids.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
         ]
       },
       {
         "id": 2, 
         "name": "BURGUER CALIFONIA",
         "description": "Hambúrguer vegano com falafel e molho especial.",
-        "price": 19.90,
+        "price": 29.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/burguer-california.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
         ]
       },
       {
         "id": 3, 
         "name": "BURGUER DE CORDEIRO",
         "description": "Pão italiano, blend ovelha 180g, alface, tomate, cebola empanada,maionese verde, queijo cheddar, queijo prato.",
-        "price": 19.90,
+        "price": 32.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/BURGUER-DE-CORDEIRO.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
         ]
       },
       {
         "id": 4, 
         "name": "BURGUER DO CHEFF",
         "description": "Pão italiano, blend 180g,120g queijo empanado, catupiri, bacon tiras, alface, cebola roxa,tomate e molho barbecue.",
-        "price": 19.90,
+        "price": 34.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/BURGUER-DO-CHEFF.jpg",
         "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 5, 
+        "name": "BURGUER FORNALHA AGRIDOCE",
+        "description": "Pão italiano, blend 180g, bacon em tiras, maionese, rúcula ou alface, tomate, queijo, cebola caramelizada.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-FORNALHA-AGRIDOCE.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 6, 
+        "name": "BURGUER TILAPIA",
+        "description": "PÃO ITALIANO COM QUEIJO PARMESAO,ALFACE TOMATE,RUCULA,FILE DE TILAPIA EMPANADOE MOLHO ESPECIAL",
+        "price": 32.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-TILAPIA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 7, 
+        "name": "BURGUER VEGANO",
+        "description": "Pão italiano, blend vegano 180g,barbecue, maionese especial, rúcula ou alface, tomate.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-VEGANO.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 9, 
+        "name": "CACHORRO QUENTE DUPLO",
+        "description": "Pão,molho, 2 salsicha, milho, ervilha, maionese, batata palha.",
+        "price": 12.90,
+        "quantity": 0,
+        "imageSrc": "/CACHORRO-QUENTE-DUPLO.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 10, 
+        "name": "MINI XIS CALABRESA",
+        "description": "Pão, bife, calabresa, ovo, queijo, maionese, tomate, milho, ervilha, alface.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/MINI-XIS-CALABRESA.avif",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 11, 
+        "name": "MINI XIS FRANGO",
+        "description": "Pão, frango desfiado, ovo, queijo, maionese, tomate, milho, ervilha, alface.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/MINI-XIS-FRANGO.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 12, 
+        "name": "MINI XIS SALADA",
+        "description": "Pão, bife, ovo, queijo, maionese, tomate, milho, ervilha, alface",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/MINI-XIS-SALADA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 13, 
+        "name": "MINI XIS STROGONOFF",
+        "description": "Pão, Strogonoff bovino, ovo, queijo, maionese, tomate, milho, ervilha, alface.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/MINI-XIS-STROGONOFF.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 14, 
+        "name": "SMASH DO CHEFF",
+        "description": "Pão brioche, 3 blend 100g, queijo chadder, bacon em tiras, cebola caramelizada.",
+        "price": 30.90,
+        "quantity": 0,
+        "imageSrc": "/SMASH-DO-CHEFF.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 15, 
+        "name": "SMASH PICANTE",
+        "description": "Pão,blend duplo, queijo chadder,pimentão refogado na manteiga, bacon em tiras, molho picante.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/SMASH-PICANTE.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 16, 
+        "name": "SMASH SUPREMO",
+        "description": "Pão brioche, blend duplo, queijo empanado, queijo chadder, bacon em tiras, molho especial.",
+        "price": 34.90,
+        "quantity": 0,
+        "imageSrc": "/SMASH-SUPREMO.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 17, 
+        "name": "TORRADA SIMPLES",
+        "description": "Pão fatiado,manteiga, presunto, queijo.",
+        "price": 7.90,
+        "quantity": 0,
+        "imageSrc": "/TORRADA-SIMPLES.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 18, 
+        "name": "XIS CALABRESA",
+        "description": "Pão, bife, calabresa, ovo, queijo, maionese,tomate, milho, ervilha, alface.",
+        "price": 32.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 19, 
+        "name": "XIS FRANGO",
+        "description": "Pão, frango desfiado, ovo, queijo, maionese, tomate, milho, ervilha, alface.",
+        "price": 32.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-FRANGO.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 20, 
+        "name": "XIS SALADA",
+        "description": "Pão, bife, ovo, queijo, maionese, tomate, milho, ervilha, alface",
+        "price": 32.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-SALADA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 21, 
+        "name": "XIS STROGONOFF",
+        "description": "Pão, Strogonoff bovino, ovo, queijo, maionese, tomate, milho, ervilha, alface.",
+        "price": 32.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-STROGONOFF.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 22, 
+        "name": "BURGUER ABACAXI NA BRASA",
+        "description": "Pão italiano,blend 180g, chadder,bacon tiras, anéis de cebela,alface,tomate maionese.",
+        "price": 26.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-ABACAXI-NA-BRASA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 23, 
+        "name": "BURGUER DA CASA",
+        "description": "Pao italiano co queijo parmesao,bland 110g,queijo mussarela bacon em tiras,cebola grelhada,molho,especial",
+        "price": 26.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-DA-CASA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 24, 
+        "name": "BURGUER DE FRANGO",
+        "description": "Pão, blend 180g,bacon em tiras,catupiri, alface, tomate maionese.",
+        "price": 26.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-DE-FRANGO.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 25, 
+        "name": "BURGUER EXPLOSÃO DE CHEDDAR",
+        "description": "PAO ITALIANO, BLEND 180G,ALFACE,TOMATE,CEBOLA EMPANADACOM BACONE MUITO QUEIJO CHEDDAR",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-EXPLOSÃO-DE-CHEDDAR.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 26, 
+        "name": "BURGUER QUEIJO NA BRASA",
+        "description": "Pão, blend 180g,bacon em tiras, queijo na brasa, maionese.",
+        "price": 26.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-QUEIJO-NA-BRASA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 27, 
+        "name": "BURGUER TODO PODEROSO",
+        "description": "Pão Italiano, blend duplo 180g, alface, tomate,cebola roxa, 2 ovos,bacon e queijo Cheddar.",
+        "price": 26.90,
+        "quantity": 0,
+        "imageSrc": "/BURGUER-TODO-PODEROSO.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 28, 
+        "name": "CACHORRO QUENTE",
+        "description": "Pão,molho,salsicha, milho, ervilha, maionese, batata palha.",
+        "price": 12.90,
+        "quantity": 0,
+        "imageSrc": "/CACHORRO-QUENTE.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 29, 
+        "name": "MINI XIS BACON",
+        "description": "Pão, bife, bacon, ovo, queijo, maionese, tomate, milho, ervilha, alface",
+        "price": 22.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 30, 
+        "name": "MINI XIS CORAÇÃO",
+        "description": "Pão, bife, corção de frango ovo, queijo, tomate maionese, milho, ervilha, alface.",
+        "price": 22.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 31, 
+        "name": "MINI XIS PICANHA",
+        "description": "Pão, picanha em tiras, ovo, queijo, maionese, tomate, milho, ervilha, alface.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 32, 
+        "name": "MINI XIS SALAME",
+        "description": "Pão, bife de salame, ovo, queijo, tomate maionese, milho, ervilha, alface.",
+        "price": 22.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 33, 
+        "name": "MINI XIS TUDO",
+        "description": "Pão, bife,bacon,coração, calabresa, frango,picanha, ovo, queijo,maionese, tomate, milho, ervilha, alface.",
+        "price": 25.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 34, 
+        "name": "SMASH DUPLO ACEBOLADO",
+        "description": "Pão brioche, blend duplo,queijo chadder,cebola refogada, bacon em tiras,molho.",
+        "price": 22.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 35, 
+        "name": "SMASH SIMPLES",
+        "description": "Pão brioche blend 100g, queijo chadder, bacon em tiras, pepino fatiado,molho.",
+        "price": 22.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 36, 
+        "name": "TORRADA DUPLA",
+        "description": "Pão fatiado, maionese, presunto, queijo,alface, tomate, ovo.",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 37, 
+        "name": "XIS BACON",
+        "description": "Pão, bife, bacon, ovo, queijo, maionese,tomate, milho, ervilha, alface",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 38, 
+        "name": "XIS PICANHA",
+        "description": "Pão, picanha em tiras, ovo, queijo, maionese, tomate, milho, ervilha, alface.",
+        "price": 36.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 39, 
+        "name": "XIS SALAME",
+        "description": "Pão, bife de salame, ovo, queijo, tomate maionese, milho, ervilha, alface.",
+        "price": 29.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 40, 
+        "name": "XIS TUDO",
+        "description": "Pão, bife,bacon,coração, calabresa, frango,picanha, ovo, queijo,maionese, tomate, milho, ervilha, alface.",
+        "price": 36.90,
+        "quantity": 0,
+        "imageSrc": "/XIS-CALABRESA.jpg",
+        "extras": [
+          { "id": 1,"name": "Pote Maionese", "price": 2.00, "quantity": 0 },
+          { "id": 2,"name": "Bacon em Titas", "price": 5.00,"quantity": 0 },
+          { "id": 3,"name": "Bife de Xis", "price": 8.00,"quantity": 0 },
+          { "id": 4,"name": "Bife Frango", "price": 8.00,"quantity": 0 },
+          { "id": 5,"name": "Bife Peixe", "price": 8.00,"quantity": 0 },
+          { "id": 6,"name": "Blend 110g", "price": 8.00,"quantity": 0 },
+          { "id": 7,"name": "Blend 180g", "price": 10.00,"quantity": 0 },
+          { "id": 8,"name": "Cebola Empanada", "price": 10.00,"quantity": 0 },
+          { "id": 9,"name": "Cestinha Batata 100g", "price": 6.00,"quantity": 0 },
+          { "id": 10,"name": "Cestinha Cebola 100g", "price": 8.00,"quantity": 0 },
+          { "id": 11,"name": "Ovo 1-Unidade", "price": 2.00,"quantity": 0 }
         ]
       }
     ],
     "cervejas": [
       {
         "id": 1, 
-        "name": "BRAHMA LONG NECK",
+        "name": "BRAHMA LONG NECK 330ml",
         "description": "Cerveja gelada, perfeita para seu pedido.",
-        "price": 19.90,
+        "price": 12.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/BRAHMA-LONG-NECK.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -210,11 +1156,11 @@
       },
       {
         "id": 2, 
-        "name": "BUDWEISER LONG NECK",
+        "name": "BUDWEISER LONG NECK 330ml",
         "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
-        "price": 9.90,
+        "price": 10.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/BUDWEISER-LONG-NECK.png",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -222,11 +1168,11 @@
       },
       {
         "id": 3, 
-        "name": "HEINEKEN LONG NECK",
+        "name": "HEINEKEN LONG NECK 330ml",
         "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
-        "price": 9.90,
+        "price": 10.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/HEINEKEN-LONG-NECK.png",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -234,11 +1180,11 @@
       },
       {
         "id": 4, 
-        "name": "PATAGONIA LONG NECK",
+        "name": "PATAGONIA LONG NECK 355ml",
         "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
-        "price": 9.90,
+        "price": 14.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/PATAGONIA-LONG-NECK.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -246,11 +1192,59 @@
       },
       {
         "id": 5, 
-        "name": "STELLA ARTOIS LONG NECK",
+        "name": "STELLA ARTOIS LONG NECK 275ml",
         "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
         "price": 9.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/STELLA-ARTOIS-LONG-NECK.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 6, 
+        "name": "BUD ZERO LONG NECK 330ml",
+        "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
+        "price": 12.00,
+        "quantity": 0,
+        "imageSrc": "/BUD-ZERO-LONG-NECK.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 7, 
+        "name": "CORONA LONG NECK 330ml",
+        "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
+        "price": 12.00,
+        "quantity": 0,
+        "imageSrc": "/CORONA-LONG-NECK.png",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 8, 
+        "name": "MALZEBIER LONG NECK 355ml",
+        "description": "Cerveja em garrafa long neck, excelente para qualquer ocasião.",
+        "price": 14.90,
+        "quantity": 0,
+        "imageSrc": "/Cerveja-Brahma-Malzbier-LN-355ml.webp",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 9, 
+        "name": "STELLA ARTOIS GARRAFA 550ml",
+        "description": "CERVEJA 550 ML",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/STELLA-ARTOIS-GARRAFA.png",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -261,10 +1255,10 @@
       {
         "id": 1, 
         "name": "SUCO DEL VALLE LATA PESSEGO",
-        "description": "Suco natural de laranja, fresco e saboroso.",
-        "price": 19.90,
+        "description": "Suco natural de pessego, fresco e saboroso.",
+        "price": 9.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/SUCO-DEL-VALLE-LATA-PESSEGO.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -273,10 +1267,10 @@
       {
         "id": 2, 
         "name": "SUCO KAPO",
-        "description": "Suco de manga natural e refrescante.",
-        "price": 19.90,
+        "description": "Laranja, Uva, Morango, Maracujá.",
+        "price": 4.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/SUCO-KAPO.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -285,10 +1279,10 @@
       {
         "id": 3, 
         "name": "SUCO DEL VALLE LATA UVA",
-        "description": "Suco de manga natural e refrescante.",
-        "price": 19.90,
+        "description": "Pêssego e Uva.",
+        "price": 9.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/SUCO-DEL-VALLE-LATA-UVA.png",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -299,10 +1293,10 @@
       {
         "id": 1, 
         "name": "AGUA COM GAS",
-        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": 19.90,
+        "description": "Agua com gas",
+        "price": 6.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/AGUA-COM-GAS.png",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -311,10 +1305,10 @@
       {
         "id": 2, 
         "name": "AGUA SEM GAS",
-        "description": "O sabor refrescante de guaraná.",
-        "price": 19.90,
+        "description": "Agua sem gas.",
+        "price": 5.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/AGUA-SEM-GAS.png",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -322,11 +1316,11 @@
       },
       {
         "id": 3, 
-        "name": "COCA COLA 2L",
-        "description": "O sabor refrescante de guaraná.",
-        "price": 19.90,
+        "name": "COCA COLA 2l",
+        "description": "Coca Cola sem acucar.",
+        "price": 9.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/COCA-COLA-2L.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -334,11 +1328,143 @@
       },
       {
         "id": 4, 
-        "name": "COCA COLA LT",
-        "description": "O sabor refrescante de guaraná.",
-        "price": 19.90,
+        "name": "COCA COLA LATA 350ml",
+        "description": "refrescante.",
+        "price": 6.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/COCA-COLA-LT.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 5, 
+        "name": "COCA COLA LATA ZERO 350ml",
+        "description": "refrescante.",
+        "price": 6.90,
+        "quantity": 0,
+        "imageSrc": "/COCA-COLA-LT-ZERO.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 6, 
+        "name": "FANTA LARANJA 2l",
+        "description": "refrescante.",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/FANTA-LARANJA-2L.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 7, 
+        "name": "FANTA UVA LT 350ml",
+        "description": "refrescante.",
+        "price": 6.90,
+        "quantity": 0,
+        "imageSrc": "/FANTA-UVA-LATA.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 8, 
+        "name": "GUARANA ANTARTICA 2l",
+        "description": "refrescante.",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/GUARANA-2L.webp",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 9, 
+        "name": "Sprite 600ml",
+        "description": "refrescante.",
+        "price": 8.90,
+        "quantity": 0,
+        "imageSrc": "/Sprite-600ml.webp",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 10, 
+        "name": "Sprite 2l",
+        "description": "refrescante.",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/SPRITE-2L.webp",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 11, 
+        "name": "AGUA H2O",
+        "description": "refrescante.",
+        "price": 5.90,
+        "quantity": 0,
+        "imageSrc": "/AGUA-H2O.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 12, 
+        "name": "AGUA TONICA LATA",
+        "description": "refrescante.",
+        "price": 5.90,
+        "quantity": 0,
+        "imageSrc": "/AGUA-TONICA-LATA.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 13, 
+        "name": "FANTA UVA 2L",
+        "description": "refrescante.",
+        "price": 9.90,
+        "quantity": 0,
+        "imageSrc": "/FANTA-UVA-2L.png",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 14, 
+        "name": "SCHWEPPES CITRUS LATA",
+        "description": "refrescante.",
+        "price": 6.90,
+        "quantity": 0,
+        "imageSrc": "/SCHWEPPES-CITRUS-LATA.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 15, 
+        "name": "SPRITE LATA",
+        "description": "refrescante.",
+        "price": 5.90,
+        "quantity": 0,
+        "imageSrc": "/SCHWEPPES-CITRUS-LATA.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -350,9 +1476,9 @@
         "id": 1, 
         "name": "ENERGETICO RED BULL COCO",
         "description": "ENERGETICO SABOR CÔCO.",
-        "price": 19.90,
+        "price": 7.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/ENERGETICO-RED-BULL-COCO.webp",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -362,9 +1488,9 @@
         "id": 2, 
         "name": "ENERGETICO RED BULL TRADICIONAL",
         "description": "ENERGETICO TRADICIONAL",
-        "price": 19.90,
+        "price": 6.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/ENERGETICO-RED-BULL-TRADICIONAL.webp",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -372,11 +1498,11 @@
       },
       {
         "id": 3, 
-        "name": "ENERGETICO RED BULL MELANCIA",
+        "name": "ENERGETICO RED BULL MELANCIA 250ml",
         "description": "ENERGETICO SABOR MELANCIA",
-        "price": 19.90,
+        "price": 4.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/ENERGETICO-RED-BULL-MELANCIA.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -384,11 +1510,11 @@
       },
       {
         "id": 4, 
-        "name": "ENERGETICO RED BULL TROPICAL",
+        "name": "ENERGETICO RED BULL TROPICAL 250ml",
         "description": "ENERGETICO TROPICAL",
-        "price": 19.90,
+        "price": 5.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/ENERGETICO-RED-BULL-TROPICAL.webp",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -399,46 +1525,10 @@
       {
         "id": 1, 
         "name": "PASSPORT SCOTCH",
-        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": 19.90,
+        "description": "PASSPORT SCOTCH litro",
+        "price": 39.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
-        "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
-        ]
-      },
-      {
-        "id": 2, 
-        "name": "VODKA CIROC LT",
-        "description": "VODKA CIROK LITRO.",
-        "price": 19.90,
-        "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
-        "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
-        ]
-      },
-      {
-        "id": 3, 
-        "name": "VODKA ABSOLUT LT",
-        "description": "VODKA ABUSOLUT LITRO.",
-        "price": 19.90,
-        "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
-        "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
-        ]
-      },
-      {
-        "id": 4, 
-        "name": "VODKA SMIRNOFF LT",
-        "description": "VODKA SMIRNOFF LITRO.",
-        "price": 19.90,
-        "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/PASSPORT-SCOTCH.webp",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -448,11 +1538,11 @@
     "vodka": [
       {
         "id": 1, 
-        "name": "PASSPORT SCOTCH",
-        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
+        "name": "VODKA CIROC LT",
+        "description": "VODKA CIROK LITRO",
         "price": 19.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/VODKA-CIROC-LT.webp",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -460,11 +1550,11 @@
       },
       {
         "id": 2, 
-        "name": "VODKA CIROC LT",
-        "description": "VODKA CIROK LITRO.",
+        "name": "VODKA ABSOLUT LT",
+        "description": "VODKA ABSOLUT LT.",
         "price": 19.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/VODKA-ABSULUT.webp",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -472,23 +1562,11 @@
       },
       {
         "id": 3, 
-        "name": "VODKA ABSOLUT LT",
-        "description": "VODKA ABUSOLUT LITRO.",
-        "price": 19.90,
-        "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
-        "extras": [
-          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
-          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
-        ]
-      },
-      {
-        "id": 4, 
         "name": "VODKA SMIRNOFF LT",
         "description": "VODKA SMIRNOFF LITRO.",
         "price": 19.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/VODKA-SMIRNOFF.webp",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -499,10 +1577,10 @@
       {
         "id": 1, 
         "name": "VINHO AGATHA",
-        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": 19.90,
+        "description": "A garrafa",
+        "price": 29.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/VINHO-AGATHA.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -511,10 +1589,10 @@
       {
         "id": 2, 
         "name": "VINHO CASILLERO DEL DIABLO",
-        "description": "RedBull te da assas.",
-        "price": 19.90,
+        "description": "A garrafa.",
+        "price": 29.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/VINHO-CASEIRO-DEL-DIABLO.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -525,10 +1603,10 @@
       {
         "id": 1, 
         "name": "ALPINO",
-        "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": 19.90,
+        "description": "Preço por unidade.",
+        "price": 2.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/ALPINO.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -537,10 +1615,10 @@
       {
         "id": 2, 
         "name": "CHARGE",
-        "description": "RedBull te da assas.",
-        "price": 19.90,
+        "description": "Preço por unidade.",
+        "price": 2.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/CHARGE.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -549,10 +1627,10 @@
       {
         "id": 3, 
         "name": "FRUIT-TELA",
-        "description": "RedBull te da assas.",
-        "price": 19.90,
+        "description": "Preço por unidade.",
+        "price": 2.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/FRUIT-TELA.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -561,10 +1639,214 @@
       {
         "id": 4, 
         "name": "HALLS",
-        "description": "RedBull te da assas.",
-        "price": 19.90,
+        "description": "Preço por unidade.",
+        "price": 2.00,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/HALLS.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 5, 
+        "name": "KITKAT",
+        "description": "Preço por unidade.",
+        "price": 3.99,
+        "quantity": 0,
+        "imageSrc": "/KITKAT.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 6, 
+        "name": "MENTOS PASTILHA",
+        "description": "Preço por unidade.",
+        "price": 2.15,
+        "quantity": 0,
+        "imageSrc": "/MENTOS-PASTILHA.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 7, 
+        "name": "PRESTIGIO 33g",
+        "description": "Preço por unidade.",
+        "price": 2.58,
+        "quantity": 0,
+        "imageSrc": "/PRESTIGIO-33G.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 8, 
+        "name": "Talento castanha do Pará",
+        "description": "Preço por unidade.",
+        "price": 2.50,
+        "quantity": 0,
+        "imageSrc": "/Talento-castanha-do-para.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 9, 
+        "name": "TRENTO ALLEGRO",
+        "description": "Preço por unidade.",
+        "price": 4.19,
+        "quantity": 0,
+        "imageSrc": "/trento-allegro-chocolate.webp",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 10, 
+        "name": "TRENTO PRETO",
+        "description": "Preço por unidade.",
+        "price": 2.00,
+        "quantity": 0,
+        "imageSrc": "/TRENTO-PRETO.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 11, 
+        "name": "TRIDENT",
+        "description": "Preço por unidade.",
+        "price": 2.00,
+        "quantity": 0,
+        "imageSrc": "/TRIDENT.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 12, 
+        "name": "BARRA DE CHOCOLATE NESTLE NEUGEBAUER",
+        "description": "80g",
+        "price": 5.49,
+        "quantity": 0,
+        "imageSrc": "/BARRA-DE-CHOCOLATE-NESTLE-NEUGEBAUER.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 13, 
+        "name": "CHOKITO",
+        "description": "Preço por unidade.",
+        "price": 2.58,
+        "quantity": 0,
+        "imageSrc": "/CHOKITO.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 14, 
+        "name": "GOMA DOCILE",
+        "description": "Preço por unidade.",
+        "price": 2.00,
+        "quantity": 0,
+        "imageSrc": "/GOMA-DOCILE.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 15, 
+        "name": "KINDER BUENO",
+        "description": "Preço por unidade.",
+        "price": 8.10,
+        "quantity": 0,
+        "imageSrc": "/KINDER-BUENO.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 16, 
+        "name": "LOLO",
+        "description": "Preço por unidade.",
+        "price": 1.90,
+        "quantity": 0,
+        "imageSrc": "/LOLO.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 17, 
+        "name": "NESTLE CLASSIC",
+        "description": "Preço por unidade.",
+        "price": 2.00,
+        "quantity": 0,
+        "imageSrc": "/NESTLE-CLASSIC.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 18, 
+        "name": "SUFLAIR 50g",
+        "description": "Preço por unidade.",
+        "price": 2.00,
+        "quantity": 0,
+        "imageSrc": "/SUFLAIR-50G.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 19, 
+        "name": "Talento meio amargo amendoas",
+        "description": "Preço por unidade.",
+        "price": 2.50,
+        "quantity": 0,
+        "imageSrc": "/TALENTO-MEIO-AMARGO.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 20, 
+        "name": "TRENTO BRANCO",
+        "description":"Preço por unidade.",
+        "price": 2.00,
+        "quantity": 0,
+        "imageSrc": "/TRENTO-BRANCO.jpg",
+        "extras": [
+          { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
+          {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
+        ]
+      },
+      {
+        "id": 21, 
+        "name": "TRENTO VERMELHO",
+        "description": "Preço por unidade.",
+        "price": 2.00,
+        "quantity": 0,
+        "imageSrc": "/TRENTO-VERMELHO.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }
@@ -576,9 +1858,9 @@
         "id": 1, 
         "name": "BURGUER FITNESS",
         "description": "Refrigerante sabor cola, perfeito para qualquer refeição.",
-        "price": 19.90,
+        "price": 29.90,
         "quantity": 0,
-        "imageSrc": "/aneis-de-cebola.jpg",
+        "imageSrc": "/burguer-fitness.jpg",
         "extras": [
           { "id": 1,"name": "Mais Bacon", "price": 3.50, "quantity": 0 },
           {  "id": 2,"name": "Molho Especial", "price": 2.00,"quantity": 0 }

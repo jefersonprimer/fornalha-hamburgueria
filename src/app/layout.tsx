@@ -14,7 +14,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         {/* Favicon Manual */}
-        <link rel="icon" href="/favicon.jpg" />
+        <link rel="icon" href="/icone.png" />
       </head>
       <body>
         <CartProvider>

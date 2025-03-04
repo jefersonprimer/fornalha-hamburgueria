@@ -1,27 +1,40 @@
-import React, { useState, useEffect, useRef } from "react";
-import useSearch from "../../hooks/useSearch"; // Importe o hook
+import React, { useState, useRef, useEffect } from "react";
+import useSearch from "../../hooks/useSearch";
 import MenuItem from "../../../MenuItem";
 import SelectedItemModal from "../../../SelectedItemModal";
-
 import { MenuItemType } from "@/types/MenuItemType";
 import { Extra } from "@/types/Extras";
 
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
-  searchTerm: string;
-  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  filteredItems: MenuItemType[]; // Agora tipado como MenuItemType[]
 }
 
-const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchTerm, filteredItems, onSearchChange }) => {
-  const { handleSearch } = useSearch();
-  const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null); // Usando o tipo MenuItemType
+const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
+  const { searchTerm, filteredItems, handleSearch } = useSearch();
+  const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null);
   const [quantity, setQuantity] = useState<number>(1);
-  const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]); // Defina o tipo para Extras (ou qualquer tipo adequado)
+  const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Função para adicionar o item ao carrinho
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => inputRef.current?.focus(), 100);
+    } else {
+      setSelectedItem(null);
+      setQuantity(1);
+      setSelectedExtras([]);
+    }
+  }, [isOpen]);
+
+  const handleSelectExtra = (extra: Extra) => {
+    setSelectedExtras((prev) =>
+      prev.some((e) => e.id === extra.id)
+        ? prev.filter((e) => e.id !== extra.id)
+        : [...prev, extra]
+    );
+  };
+
   const handleAddToCart = () => {
     if (selectedItem) {
       console.log("Item adicionado ao carrinho", {
@@ -34,39 +47,15 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchTerm, 
         imageSrc: selectedItem.imageSrc,
       });
     }
-    setSelectedItem(null); // Fecha o modal após adicionar
+    setSelectedItem(null);
+    setQuantity(1);
+    setSelectedExtras([]);
   };
-
-  // Função para lidar com a seleção de extras
-  const handleSelectExtra = (extra: Extra) => {
-    setSelectedExtras((prev) => {
-      // Verifica se o extra já foi selecionado
-      if (prev.some((e) => e.id === extra.id)) {
-        return prev.filter((e) => e.id !== extra.id); // Remove se já selecionado
-      } else {
-        return [...prev, extra]; // Adiciona se não estiver selecionado
-      }
-    });
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 100); // Pequeno atraso para garantir o foco
-    } else {
-      handleSearch(""); // Limpa a busca ao fechar o modal
-      setSelectedItem(null);
-    }
-  }, [isOpen, handleSearch]);
 
   if (!isOpen) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50"
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50" onClick={onClose}>
       <div
         className="bg-[#F4F5F7] p-2 w-full h-full max-w-[600px] max-h-[980px] sm:w-[600px] sm:h-[80%] sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
@@ -89,7 +78,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchTerm, 
             ref={inputRef}
             type="text"
             value={searchTerm}
-            onChange={onSearchChange} // Passando a função para lidar com a busca
+            onChange={(e) => handleSearch(e.target.value)}
             placeholder="Buscar..."
             className="w-full pl-10 pr-20 p-2 border border-gray-300 rounded"
           />
@@ -115,9 +104,9 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchTerm, 
 
         <div className="h-[88%] max-h-[800px] overflow-y-auto">
           {filteredItems.length > 0 ? (
-            filteredItems.map((item) => (
+            filteredItems.map((item: MenuItemType, index: number) => (
               <MenuItem
-                key={item.id}
+                key={`${item.id}-${index}`} // Garantindo chaves únicas
                 id={item.id}
                 name={item.name}
                 description={item.description}
@@ -138,13 +127,12 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchTerm, 
             setQuantity={setQuantity}
             selectedExtras={selectedExtras}
             setSelectedExtras={setSelectedExtras}
-            handleQuantityChange={(delta) =>
-              setQuantity((prev) => Math.max(1, prev + delta))
-            }
+            handleQuantityChange={(delta) => setQuantity((prev) => Math.max(1, prev + delta))}
             closeModal={() => setSelectedItem(null)}
-            handleAddToCart={handleAddToCart} // Passando a função handleAddToCart
-            handleSelectExtra={handleSelectExtra} // Passando a função handleSelectExtra
-          />
+            handleAddToCart={handleAddToCart}
+            handleSelectExtra={handleSelectExtra} onSave={function (): void {
+              throw new Error("Function not implemented.");
+            } }          />
         )}
       </div>
     </div>

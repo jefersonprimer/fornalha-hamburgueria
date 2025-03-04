@@ -1,117 +1,127 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
-import { Extra } from "@/types/Extras";
+import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-// Definição do tipo CartItem com lista de extras
+interface Extra {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
 interface CartItem {
   id: number;
-  quantity: number;
   name: string;
   description: string;
-  price: number;
   imageSrc: string;
+  price: number;
+  quantity: number;
   extras?: Extra[];
 }
 
-// Interface para o contexto do carrinho
 interface CartContextType {
-  cart: CartItem[];  // Aqui usamos CartItem[] em vez de MenuItemType[]
+  cart: CartItem[];
   addToCart: (item: CartItem) => void;
-  updateCart: (id: number, quantityChange: number, updatedExtras?: { id: number; quantity: number }[]) => void;
-  removeFromCart: (id: number) => void;
+  updateCart: (itemId: number, newQuantity: number, newExtras?: Extra[]) => void;
+  removeFromCart: (itemId: number) => void;
+  clearCart: () => void;
 }
 
-// Criando o contexto
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-// Interface das props do Provider
+export const useCart = (): CartContextType => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
+};
+
 interface CartProviderProps {
   children: ReactNode;
 }
 
-// Função para mesclar e atualizar os extras corretamente
-const mergeExtras = (existingExtras: Extra[] = [], newExtras: Extra[] = []) => {
-  const extrasMap = new Map<number, Extra>();
+export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  [...existingExtras, ...newExtras].forEach((extra) => {
-    if (extrasMap.has(extra.id)) {
-      extrasMap.set(extra.id, {
-        ...extra,
-        quantity: extrasMap.get(extra.id)!.quantity + extra.quantity, // Soma a quantidade dos extras iguais
-      });
-    } else {
-      extrasMap.set(extra.id, extra);
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      try {
+        setCart(JSON.parse(savedCart));
+      } catch (error) {
+        console.error("Erro ao carregar o carrinho:", error);
+      }
     }
-  });
+  }, []);
 
-  return Array.from(extrasMap.values());
-};
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
-// Provider do carrinho
-export function CartProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState<CartItem[]>([]);  // Tipando corretamente o cart como CartItem[]
-
-  // Adicionar item ao carrinho (considerando os extras)
   const addToCart = (item: CartItem) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+      const existingItemIndex = prevCart.findIndex((cartItem) => cartItem.id === item.id);
 
-      if (existingItem) {
-        return prevCart.map((cartItem) =>
-          cartItem.id === item.id
-            ? {
-                ...cartItem,
-                quantity: cartItem.quantity + item.quantity,
-                extras: mergeExtras(cartItem.extras, item.extras), // Atualiza os extras corretamente
-              }
-            : cartItem
-        );
+      if (existingItemIndex >= 0) {
+        const updatedCart = [...prevCart];
+        updatedCart[existingItemIndex].quantity += item.quantity;
+
+        if (item.extras && item.extras.length > 0) {
+          if (!updatedCart[existingItemIndex].extras) {
+            updatedCart[existingItemIndex].extras = [];
+          }
+
+          item.extras.forEach((newExtra) => {
+            const existingExtraIndex = updatedCart[existingItemIndex].extras!.findIndex(
+              (e) => e.id === newExtra.id
+            );
+
+            if (existingExtraIndex >= 0) {
+              updatedCart[existingItemIndex].extras![existingExtraIndex].quantity += newExtra.quantity || 1;
+            } else {
+              updatedCart[existingItemIndex].extras!.push({ ...newExtra });
+            }
+          });
+        }
+        return updatedCart;
       } else {
         return [...prevCart, { ...item }];
       }
     });
   };
 
-  // Atualizar quantidade do item e dos extras no carrinho
-  const updateCart = (id: number, quantityChange: number, updatedExtras?: { id: number; quantity: number }[]) => {
+  const updateCart = (itemId: number, newQuantity: number, newExtras: Extra[] = []) => {
     setCart((prevCart) =>
-      prevCart.map((cartItem) =>
-        cartItem.id === id
-          ? {
-              ...cartItem,
-              quantity: Math.max(cartItem.quantity + quantityChange, 1),
-              extras: updatedExtras
-                ? cartItem.extras?.map((extra) => {
-                    const updatedExtra = updatedExtras.find((e) => e.id === extra.id);
-                    return updatedExtra ? { ...extra, quantity: updatedExtra.quantity } : extra;
-                  })
-                : cartItem.extras,
-            }
-          : cartItem
+      prevCart.map((item) =>
+        item.id === itemId ? { ...item, quantity: newQuantity, extras: newExtras } : item
       )
     );
   };
 
-  // Remover item do carrinho
-  const removeFromCart = (id: number) => {
-    setCart((prevCart) => prevCart.filter((cartItem) => cartItem.id !== id));
+  const removeFromCart = (itemId: number) => {
+    setCart((prevCart) => {
+      const itemIndex = prevCart.findIndex((item) => item.id === itemId);
+      if (itemIndex === -1) return prevCart;
+      
+      const item = prevCart[itemIndex];
+      if (item.quantity > 1) {
+        const updatedCart = [...prevCart];
+        updatedCart[itemIndex] = { ...item, quantity: item.quantity - 1 };
+        return updatedCart;
+      } else {
+        return prevCart.filter((item) => item.id !== itemId);
+      }
+    });
+  };
+
+  const clearCart = () => {
+    setCart([]);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, updateCart, removeFromCart, clearCart }}>
       {children}
     </CartContext.Provider>
   );
-}
-
-// Hook para usar o contexto do carrinho
-export function useCart() {
-  const context = useContext(CartContext);
-
-  if (!context) {
-    throw new Error("useCart deve ser usado dentro de um CartProvider");
-  }
-
-  return context;
-}
+};

@@ -2,7 +2,7 @@ import { Extra } from "@/types/Extras";
 import { MenuItemType } from "@/types/MenuItemType";
 
 export function formatarMensagem(
-  cart: MenuItemType[],  // Usar CartItem em vez de any[]
+  cart: MenuItemType[],
   bairro: string,
   rua: string,
   casa: string,
@@ -10,61 +10,53 @@ export function formatarMensagem(
   desconto: number,
   observacao: string
 ) {
-  // Calculando o total com desconto
-  const totalComDesconto =
-    cart.reduce((total, item) => {
-      let price = item.price; // Garantir que price é um number
+  // Função auxiliar para calcular o total de um item (incluindo extras)
+  const calcularTotalItem = (item: MenuItemType) => {
+    const itemBaseTotal = item.price * item.quantity;
+    
+    // Calcular total dos extras
+    const extrasTotal = item.extras && item.extras.length > 0
+      ? item.extras.reduce((total: number, extra: Extra) => {
+          return total + (extra.price * (extra.quantity || 1));
+        }, 0)
+      : 0;
+    
+    return itemBaseTotal + extrasTotal;
+  };
 
-      if (isNaN(price)) price = 0;
-      let itemTotal = price * item.quantity;
-
-      // Adicionar o preço dos extras, se houver
-      if (item.extras && item.extras.length > 0) {
-        const extrasTotal = item.extras.reduce((extraTotal: number, extra: Extra) => {
-          let extraPrice = extra.price; // Garantir que extraPrice é um number
-
-          if (isNaN(extraPrice)) extraPrice = 0;
-          
-          return extraTotal + extraPrice * extra.quantity; // Multiplica pela quantidade do extra
-        }, 0);
-
-        itemTotal += extrasTotal; // Soma o valor dos extras ao item principal
-      }
-
-      return total + itemTotal;
-    }, 0) * (1 - desconto);
+  // Calculando o subtotal (soma de todos os itens com extras)
+  const subtotal = cart.reduce((total, item) => {
+    return total + calcularTotalItem(item);
+  }, 0);
+  
+  // Aplicar desconto
+  const totalComDesconto = subtotal * (1 - desconto/100);
 
   // Montando a mensagem dos itens
   const itensPedido = cart
     .map((item) => {
-      let price = item.price; // Garantir que price é um number
-
-      if (isNaN(price)) price = 0;
-      const totalPrice = price * item.quantity;
-
+      const itemTotal = calcularTotalItem(item);
+      const itemBaseTotal = item.price * item.quantity;
+      
       // Construir a mensagem do item principal
-      let mensagemItem = `🍽️ *${item.name}* - ${item.quantity}x (R$ ${totalPrice.toFixed(2)})`;
+      let mensagemItem = `🍽️ *${item.name}* - ${item.quantity}x (R$ ${itemBaseTotal.toFixed(2)})`;
 
       // Adicionar extras, se houver
       if (item.extras && item.extras.length > 0) {
         const extrasMensagem = item.extras
           .map((extra: Extra) => {
-            let extraPrice = extra.price; // Garantir que extraPrice é um number
-
-            if (isNaN(extraPrice)) extraPrice = 0;
-            
-            const extraTotal = extraPrice * extra.quantity; // Multiplica pelo número de vezes que o extra foi selecionado
-            
-            return `  ➕ *${extra.name}* - ${extra.quantity}x (+R$ ${extraTotal.toFixed(2)})`; // Inclui a quantidade correta
+            const extraTotal = extra.price * (extra.quantity || 1);
+            return `  ➕ *${extra.name}* - ${extra.quantity || 1}x (+R$ ${extraTotal.toFixed(2)})`;
           })
           .join("\n");
 
-        mensagemItem += `\n${extrasMensagem}`; // Adiciona os extras à mensagem do item
+        mensagemItem += `\n${extrasMensagem}`;
+        mensagemItem += `\n  📊 *Subtotal do item: R$ ${itemTotal.toFixed(2)}*`;
       }
 
       return mensagemItem;
     })
-    .join("\n");
+    .join("\n\n");
 
   // Formatando o endereço
   const endereco = `🏠 *Endereço de entrega:*\n📍 Bairro: ${bairro}\n📍 Rua: ${rua}\n🏡 Casa: ${casa}\n📝 Referência: ${referencia || "Nenhuma"}`;
@@ -73,6 +65,11 @@ export function formatarMensagem(
   const textoObservacao = observacao.trim()
     ? `\n📌 *Observação:* ${observacao}`
     : "";
+    
+  // Resumo do pedido
+  const resumo = `💰 *Subtotal: R$ ${subtotal.toFixed(2)}*
+${desconto > 0 ? `🏷️ *Desconto: R$ ${(subtotal * desconto/100).toFixed(2)}*` : ''}
+🚀 *Total a pagar: R$ ${totalComDesconto.toFixed(2)}*`;
 
-  return `Olá! Quero fazer um pedido:\n\n${itensPedido}\n\n${endereco}${textoObservacao}\n\n🚀 *Total com desconto: R$ ${totalComDesconto.toFixed(2)}* \n\nAguardo a confirmação!`;
+  return `Olá! Quero fazer um pedido:\n\n${itensPedido}\n\n${endereco}${textoObservacao}\n\n${resumo}\n\nAguardo a confirmação!`;
 }

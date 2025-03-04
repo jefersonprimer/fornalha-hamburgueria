@@ -1,6 +1,5 @@
 "use client";
 
-
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
@@ -14,6 +13,8 @@ const CityModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     <div className="flex justify-between items-center mb-4">
       <h3 className="text-xl font-bold">Fornalha Hamburgueria</h3>
       
+      {/* menu horizontal aonde eu quero: Sobre Horarios Pagamento */}
+
       {/* Botão de Fechar no canto direito */}
       <button onClick={onClose}
        className=" text-gray-500 text-2xl bg-[#E5E7EB] rounded-[50%] hover:bg-[#FFFFFF]">
@@ -92,12 +93,13 @@ const HeaderWithStatus: React.FC = () => {
   return (
     <div className="flex justify-between items-center p-4 bg-[#FFF] text-black">
       <div className="flex flex-col sm:flex-row items-center sm:items-end text-center sm:text-left gap-4">
-      <Image
+        <Image
           src="/old-logo.png"
           alt="Logo"
           width={160}
           height={160}
           className="rounded-md z-20"
+          style={{ height: '170px', width: '160px' }}
         />
         <div>
         <h1 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl cursor-pointer text-[#1F2937]">

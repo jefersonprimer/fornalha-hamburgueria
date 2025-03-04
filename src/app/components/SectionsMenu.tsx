@@ -46,11 +46,12 @@ export default function SectionsMenu() {
         ...selectedItem,
         quantity,
         extras: selectedExtras.map((extra) => ({
-          id: extra.id,
+          id: parseInt(extra.id as unknown as string, 10), // Converte caso necessário
           name: extra.name,
           price: extra.price,
           quantity: extra.quantity ?? 1,
-        })),
+        }))
+        ,
       });
       closeModal();
     }
@@ -126,7 +127,9 @@ export default function SectionsMenu() {
         handleAddToCart={handleAddToCart}
         closeModal={closeModal}
         handleSelectExtra={handleSelectExtra} // Passando a função
-      />
+        onSave={function (): void {
+          throw new Error("Function not implemented.");
+        } }      />
 
 
       {showScrollButton && (

@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
       <div>
         <div className="relative z-10"><Banner /></div>
-        <div className="flex justify-center mt-[-10vh] z-50"><HeaderWithStatus /></div>
+        <div className="flex justify-center mt-[-12vh] z-50"><HeaderWithStatus /></div>
         <SectionsMenu />
       </div>
   );

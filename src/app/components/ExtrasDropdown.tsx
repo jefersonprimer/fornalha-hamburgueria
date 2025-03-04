@@ -1,85 +1,104 @@
-import React, { useState } from "react";
-import { FaChevronDown, FaMinus, FaPlus } from "react-icons/fa";
+import React from "react";
 import { Extra } from "@/types/Extras";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 interface ExtrasDropdownProps {
   extras: Extra[];
   selectedExtras: Extra[];
   setSelectedExtras: (extras: Extra[]) => void;
-  handleSelectExtra: (extra: Extra) => void; // Adicionando handleSelectExtra na interface
+  handleSelectExtra: (extra: Extra) => void;
 }
 
 export default function ExtrasDropdown({
   extras,
   selectedExtras,
   setSelectedExtras,
-  handleSelectExtra, // Recebendo a função como prop
 }: ExtrasDropdownProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Função para atualizar a quantidade de extras
-  const handleExtraQuantityChange = (extra: Extra, delta: number) => {
-    const existingExtra = selectedExtras.find((e) => e.name === extra.name);
-
-    if (existingExtra) {
-      const updatedExtras = selectedExtras
-        .map((e) =>
-          e.name === extra.name
-            ? { ...e, quantity: Math.max(1, (e.quantity || 1) + delta) } // Garante que a quantidade não vá para 0 ou negativa
-            : e
-        )
-        .filter((e) => e.quantity > 0); // Remove extras com quantidade 0 ou negativa
-
+  // Função para adicionar um extra com uma id única
+  const handleAddExtra = (extra: Extra) => {
+    // Verifica se o extra já existe nos selectedExtras
+    const existingExtraIndex = selectedExtras.findIndex((item) => item.id === extra.id);
+    
+    if (existingExtraIndex !== -1) {
+      // Se já existe, apenas incrementa a quantidade
+      const updatedExtras = [...selectedExtras];
+      updatedExtras[existingExtraIndex] = {
+        ...updatedExtras[existingExtraIndex],
+        quantity: (updatedExtras[existingExtraIndex].quantity || 1) + 1,
+      };
       setSelectedExtras(updatedExtras);
-    } else if (delta > 0) {
-      // Adiciona o extra caso não exista ainda
+    } else {
+      // Se não existe, adiciona o novo extra
       setSelectedExtras([...selectedExtras, { ...extra, quantity: 1 }]);
     }
+  };
 
-    // Chamando a função handleSelectExtra após a mudança na quantidade
-    handleSelectExtra(extra);
+  // Função para remover ou reduzir a quantidade de um extra
+  const handleRemoveExtra = (extraId: number) => {
+    const existingExtraIndex = selectedExtras.findIndex((item) => item.id === extraId);
+    
+    if (existingExtraIndex === -1) return;
+    
+    const updatedExtras = [...selectedExtras];
+    const currentQuantity = updatedExtras[existingExtraIndex].quantity || 1;
+    
+    if (currentQuantity > 1) {
+      // Reduz a quantidade se for maior que 1
+      updatedExtras[existingExtraIndex] = {
+        ...updatedExtras[existingExtraIndex],
+        quantity: currentQuantity - 1,
+      };
+    } else {
+      // Remove o extra se a quantidade for 1
+      updatedExtras.splice(existingExtraIndex, 1);
+    }
+    
+    setSelectedExtras(updatedExtras);
+  };
+
+  // Função para obter a quantidade de um extra específico
+  const getExtraQuantity = (extraId: number) => {
+    const existing = selectedExtras.find((item) => item.id === extraId);
+    return existing ? existing.quantity || 1 : 0;
   };
 
   return (
     <div className="mt-4">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex justify-between items-center bg-gray-200 p-2 w-full rounded-lg"
-      >
-        Escolha adicionais <FaChevronDown />
-      </button>
-
-      {isOpen && (
-        <div className="mt-2 border p-2 bg-gray-100">
-          {extras.map((extra) => {
-            // Encontra o extra selecionado, se existir
-            const selectedExtra = selectedExtras.find((e) => e.name === extra.name);
-            const quantity = selectedExtra?.quantity || 0;
-
-            return (
-              <div key={extra.name} className="flex justify-between items-center py-1">
-                <span>{extra.name} (+ R$ {extra.price.toFixed(2)})</span>
-                <div className="flex items-center">
-                  <button
-                    onClick={() => handleExtraQuantityChange(extra, -1)}
-                    disabled={quantity === 0}
-                    className="p-1 bg-gray-300 rounded-lg disabled:opacity-50"
-                  >
-                    <FaMinus />
-                  </button>
-                  <span className="mx-2">{quantity}</span>
-                  <button
-                    onClick={() => handleExtraQuantityChange(extra, 1)}
-                    className="p-1 bg-gray-300 rounded-lg"
-                  >
-                    <FaPlus />
-                  </button>
-                </div>
+      <h3 className="font-medium text-gray-700 bg-[#F3F4F6] p-4 border-[1px] border-[#E5E7EB]">ESCOLHA O ACOMPANHAMENTO</h3>
+      
+      <div className="overflow-y-auto md:max-h-40">
+        {extras.map((extra) => {
+          const quantity = getExtraQuantity(extra.id);
+          
+          return (
+            <div key={extra.id} className="flex justify-between items-center p-4 border-[1px] border-[#E5E7EB] hover:bg-[#F3F4F6]">
+              <div>
+                <span>{extra.name}</span>
+                <span className="text-sm text-gray-500 ml-2">R$ {extra.price.toFixed(2)}</span>
               </div>
-            );
-          })}
-        </div>
-      )}
+              
+              <div className="flex items-center">
+                <button
+                  onClick={() => handleRemoveExtra(extra.id)}
+                  className={`p-1 ${quantity > 0 ? 'text-red-500' : 'text-gray-300'}`}
+                  disabled={quantity === 0}
+                >
+                  <FaMinus size={12} />
+                </button>
+                
+                <span className="mx-2">{quantity}</span>
+                
+                <button
+                  onClick={() => handleAddExtra(extra)}
+                  className="p-1 text-green-500"
+                >
+                  <FaPlus size={12} />
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
